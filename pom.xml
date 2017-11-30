@@ -13,6 +13,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mainClass>com.apu.auctiondesktop.MainApp</mainClass>
     </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>com.apu</groupId>
+            <artifactId>AuctionAPI</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 
     <organization>
         <!-- Used as the 'Vendor' for JNLP generation -->
