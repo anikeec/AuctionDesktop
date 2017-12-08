@@ -18,14 +18,23 @@ import java.net.Socket;
 public class Client {
     private static final Log log = Log.getInstance();
     private final Class classname = Client.class;
-    private final Socket clientSocket;
-    private final String host; 
+    private final Socket clientSocket; 
+    private static Network network;
+    private static final int CONNECTION_PORT = 5050;
+    private static final String CONNECTION_HOST = "localhost";
     
     private static ClientState clientState = ClientState.NOT_CONNECTED;
+    
+    private static Client instance;
 
-    public Client(String host, int port) throws IOException {            
-        this.host = host;
-        clientSocket = new Socket(host, port);
+    private Client() throws IOException {            
+        clientSocket = new Socket(CONNECTION_HOST, CONNECTION_PORT);
+    }
+    
+    public static Client getInstance() throws IOException {
+        if(instance == null)
+            instance = new Client();
+        return instance;
     }
 
     public static synchronized ClientState getClientState() {
@@ -43,9 +52,13 @@ public class Client {
         handleSocket(usedId);               
     }
     
+    public void stop() throws IOException {
+        network.stop();
+    }
+    
     private void handleSocket(int userId) {
         User user = new User(userId, clientSocket);
-        Network network = new Network(user, clientSocket, false);
+        network = new Network(user, clientSocket, false);
         new Thread(network).start();
     }
 

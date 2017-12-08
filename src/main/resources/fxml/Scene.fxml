@@ -8,8 +8,8 @@
 
 <AnchorPane id="AnchorPane" prefHeight="240.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apu.auctiondesktop.FXMLController">
     <children>
-        <Button fx:id="increasePriceButton" layoutX="190.0" layoutY="196.0" onAction="#handleButtonAction" text="Increase price!" />
-      <Button fx:id="connectButton" layoutX="27.0" layoutY="196.0" onAction="#handleButtonAction" text="Connect" />
+        <Button fx:id="newRateButton" layoutX="190.0" layoutY="196.0" onAction="#handleNewRateButtonAction" onKeyReleased="#handleNewRateButtonKeyReleased" onMouseReleased="#handleNewRateButtonMouseReleased" text="Increase price!" />
+      <Button fx:id="connectButton" layoutX="27.0" layoutY="196.0" onAction="#handleConnectButtonAction" onKeyReleased="#handleConnectButtonKeyReleased" onMouseReleased="#handleConnectButtonMouseReleased" text="Connect" />
       <TextField fx:id="TextFieldState" disable="true" layoutX="146.0" layoutY="26.0" />
       <Label layoutX="24.0" layoutY="30.0" text="State" />
       <TextField fx:id="TextFieldLotName" disable="true" layoutX="146.0" layoutY="57.0" />

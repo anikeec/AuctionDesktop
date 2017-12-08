@@ -1,0 +1,549 @@
+2017-12-08 16:28:15 DEBUG main - (com.apu.auctiondesktop.MainApp) - java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at com.apu.auctiondesktop.nw.client.Client.<init>(Client.java:28)
+	at com.apu.auctiondesktop.MainApp.networkClientRun(MainApp.java:49)
+	at com.apu.auctiondesktop.MainApp.main(MainApp.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.javafx.application.LauncherImpl.launchApplicationWithArgs(LauncherImpl.java:389)
+	at com.sun.javafx.application.LauncherImpl.launchApplication(LauncherImpl.java:328)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.launcher.LauncherHelper$FXHelper.main(LauncherHelper.java:767)
+
+2017-12-08 16:28:50 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.MainApp) - java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at com.apu.auctiondesktop.nw.client.Client.<init>(Client.java:28)
+	at com.apu.auctiondesktop.MainApp.networkClientRun(MainApp.java:49)
+	at com.apu.auctiondesktop.MainApp.start(MainApp.java:24)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$162(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$175(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$173(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$174(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 16:55:17 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.MainApp) - java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at com.apu.auctiondesktop.nw.client.Client.<init>(Client.java:30)
+	at com.apu.auctiondesktop.nw.client.Client.getInstance(Client.java:35)
+	at com.apu.auctiondesktop.MainApp.networkClientRun(MainApp.java:48)
+	at com.apu.auctiondesktop.MainApp.start(MainApp.java:23)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$162(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$175(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$173(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$174(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:00:42 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.MainApp) - java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at com.apu.auctiondesktop.nw.client.Client.<init>(Client.java:30)
+	at com.apu.auctiondesktop.nw.client.Client.getInstance(Client.java:35)
+	at com.apu.auctiondesktop.MainApp.networkClientRun(MainApp.java:48)
+	at com.apu.auctiondesktop.MainApp.start(MainApp.java:23)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$162(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$175(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$173(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$174(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:10:49 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Client started
+2017-12-08 17:10:49 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Try to connect
+2017-12-08 17:10:49 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"REGISTRATION","time":"2017.12.08 17:10:49","packetId":0,"userId":1}
+2017-12-08 17:10:49 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"message":"Registration answer","queryType":"ANSWER","time":"2017.12.08 17:10:49","packetId":0,"userId":1}
+2017-12-08 17:10:49 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Ask for registration query received
+2017-12-08 17:10:49 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 1
+2017-12-08 17:10:50 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:10:50","packetId":1,"userId":1}
+2017-12-08 17:10:50 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:10:50","packetId":1,"userId":1}
+2017-12-08 17:10:50 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:10:50 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 2
+2017-12-08 17:10:51 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:10:51","packetId":2,"userId":1}
+2017-12-08 17:10:51 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:10:51","packetId":2,"userId":1}
+2017-12-08 17:10:51 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:10:51 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 3
+2017-12-08 17:10:52 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:10:52","packetId":3,"userId":1}
+2017-12-08 17:10:52 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:10:52","packetId":3,"userId":1}
+2017-12-08 17:10:52 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:10:52 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 4
+2017-12-08 17:10:53 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:10:53","packetId":4,"userId":1}
+2017-12-08 17:10:53 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:10:53","packetId":4,"userId":1}
+2017-12-08 17:10:53 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:10:53 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 5
+2017-12-08 17:10:54 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:10:54","packetId":5,"userId":1}
+2017-12-08 17:10:54 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:10:54","packetId":5,"userId":1}
+2017-12-08 17:10:54 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:10:54 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 6
+2017-12-08 17:10:55 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:10:55","packetId":6,"userId":1}
+2017-12-08 17:10:55 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:10:55","packetId":6,"userId":1}
+2017-12-08 17:10:55 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:10:55 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 7
+2017-12-08 17:10:56 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:10:56","packetId":7,"userId":1}
+2017-12-08 17:10:56 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:10:56","packetId":7,"userId":1}
+2017-12-08 17:10:56 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:10:56 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 8
+2017-12-08 17:10:57 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:10:57","packetId":8,"userId":1}
+2017-12-08 17:10:57 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:10:57","packetId":8,"userId":1}
+2017-12-08 17:10:57 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:10:57 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 9
+2017-12-08 17:10:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:10:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:10:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:10:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:10:58 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Interrupted.
+2017-12-08 17:10:58 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Input socket closed
+2017-12-08 17:10:58 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - java.lang.InterruptedException
+	at com.apu.auctiondesktop.nw.SendingTask.run(SendingTask.java:55)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:10:58 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Interrupted.
+2017-12-08 17:10:58 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Output socket closed
+2017-12-08 17:10:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:10:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:10:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:10:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Socket closed
+2017-12-08 17:14:14 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Client started
+2017-12-08 17:14:14 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Try to connect
+2017-12-08 17:14:15 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"REGISTRATION","time":"2017.12.08 17:14:15","packetId":0,"userId":1}
+2017-12-08 17:14:15 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"message":"Registration answer","queryType":"ANSWER","time":"2017.12.08 17:14:15","packetId":0,"userId":1}
+2017-12-08 17:14:15 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Ask for registration query received
+2017-12-08 17:14:15 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 1
+2017-12-08 17:14:16 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:14:16","packetId":1,"userId":1}
+2017-12-08 17:14:16 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:14:16","packetId":1,"userId":1}
+2017-12-08 17:14:16 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:14:16 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 2
+2017-12-08 17:14:17 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:14:17","packetId":2,"userId":1}
+2017-12-08 17:14:17 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:14:17","packetId":2,"userId":1}
+2017-12-08 17:14:17 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:14:17 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 3
+2017-12-08 17:14:18 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:14:18","packetId":3,"userId":1}
+2017-12-08 17:14:18 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:14:18","packetId":3,"userId":1}
+2017-12-08 17:14:18 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:14:18 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 4
+2017-12-08 17:14:19 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:14:19","packetId":4,"userId":1}
+2017-12-08 17:14:19 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:14:19","packetId":4,"userId":1}
+2017-12-08 17:14:19 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:14:19 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 5
+2017-12-08 17:14:20 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:14:20","packetId":5,"userId":1}
+2017-12-08 17:14:20 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:14:20","packetId":5,"userId":1}
+2017-12-08 17:14:20 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:14:20 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 6
+2017-12-08 17:14:21 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:14:21","packetId":6,"userId":1}
+2017-12-08 17:14:21 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:14:21","packetId":6,"userId":1}
+2017-12-08 17:14:21 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:14:21 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 7
+2017-12-08 17:14:21 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:14:21 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:14:21 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:14:21 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:14:21 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Interrupted.
+2017-12-08 17:14:21 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Input socket closed
+2017-12-08 17:14:21 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - java.lang.InterruptedException
+	at com.apu.auctiondesktop.nw.SendingTask.run(SendingTask.java:55)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:14:21 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Interrupted.
+2017-12-08 17:14:21 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Output socket closed
+2017-12-08 17:14:21 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:14:21 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:14:21 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:14:21 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Socket closed
+2017-12-08 17:14:30 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Client started
+2017-12-08 17:14:30 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Try to connect
+2017-12-08 17:14:30 DEBUG Thread-9 - (com.apu.auctiondesktop.nw.SendingTask) - java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943)
+	at com.apu.auctiondesktop.nw.SendingTask.run(SendingTask.java:50)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:14:30 DEBUG Thread-9 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Message - Error.
+2017-12-08 17:14:30 DEBUG Thread-10 - (com.apu.auctiondesktop.nw.ReceivingTask) - java.net.SocketException: Socket is closed
+	at java.net.Socket.getInputStream(Socket.java:903)
+	at com.apu.auctiondesktop.nw.ReceivingTask.run(ReceivingTask.java:46)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:14:30 DEBUG Thread-10 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Message - Error
+2017-12-08 17:14:30 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:14:30 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:14:30 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:14:30 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:14:30 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:14:30 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:14:30 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:14:30 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Socket closed
+2017-12-08 17:14:38 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:14:38 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:14:38 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:14:38 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:14:38 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:14:38 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:14:38 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:14:38 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Socket closed
+2017-12-08 17:14:52 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Client started
+2017-12-08 17:14:52 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Try to connect
+2017-12-08 17:14:52 DEBUG Thread-13 - (com.apu.auctiondesktop.nw.SendingTask) - java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943)
+	at com.apu.auctiondesktop.nw.SendingTask.run(SendingTask.java:50)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:14:52 DEBUG Thread-13 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Message - Error.
+2017-12-08 17:14:52 DEBUG Thread-14 - (com.apu.auctiondesktop.nw.ReceivingTask) - java.net.SocketException: Socket is closed
+	at java.net.Socket.getInputStream(Socket.java:903)
+	at com.apu.auctiondesktop.nw.ReceivingTask.run(ReceivingTask.java:46)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:14:52 DEBUG Thread-14 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Message - Error
+2017-12-08 17:14:52 DEBUG Thread-12 - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:14:52 DEBUG Thread-12 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:14:52 DEBUG Thread-12 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:14:52 DEBUG Thread-12 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:14:52 DEBUG Thread-12 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:14:52 DEBUG Thread-12 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:14:52 DEBUG Thread-12 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:14:52 DEBUG Thread-12 - (com.apu.auctiondesktop.nw.Network) - Network thread. Socket closed
+2017-12-08 17:14:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:14:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:14:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:14:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:14:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:14:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:14:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:14:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Socket closed
+2017-12-08 17:15:00 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Client started
+2017-12-08 17:15:00 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Try to connect
+2017-12-08 17:15:00 DEBUG Thread-18 - (com.apu.auctiondesktop.nw.ReceivingTask) - java.net.SocketException: Socket is closed
+	at java.net.Socket.getInputStream(Socket.java:903)
+	at com.apu.auctiondesktop.nw.ReceivingTask.run(ReceivingTask.java:46)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:15:00 DEBUG Thread-18 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Message - Error
+2017-12-08 17:15:00 DEBUG Thread-16 - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:15:00 DEBUG Thread-16 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:15:00 DEBUG Thread-16 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:15:00 DEBUG Thread-16 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:15:00 DEBUG Thread-17 - (com.apu.auctiondesktop.nw.SendingTask) - java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943)
+	at com.apu.auctiondesktop.nw.SendingTask.run(SendingTask.java:50)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:15:00 DEBUG Thread-17 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Message - Error.
+2017-12-08 17:15:00 DEBUG Thread-16 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:15:00 DEBUG Thread-16 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:15:00 DEBUG Thread-16 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:15:00 DEBUG Thread-16 - (com.apu.auctiondesktop.nw.Network) - Network thread. Socket closed
+2017-12-08 17:15:05 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:15:05 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:15:05 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:15:05 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:15:05 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:15:05 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:15:05 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:15:05 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Socket closed
+2017-12-08 17:15:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Client started
+2017-12-08 17:15:58 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Try to connect
+2017-12-08 17:15:58 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"REGISTRATION","time":"2017.12.08 17:15:58","packetId":0,"userId":1}
+2017-12-08 17:15:58 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"message":"Registration answer","queryType":"ANSWER","time":"2017.12.08 17:15:58","packetId":0,"userId":1}
+2017-12-08 17:15:58 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Ask for registration query received
+2017-12-08 17:15:58 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 1
+2017-12-08 17:15:59 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:15:59","packetId":1,"userId":1}
+2017-12-08 17:15:59 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:15:59","packetId":1,"userId":1}
+2017-12-08 17:15:59 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:15:59 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 2
+2017-12-08 17:16:00 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:16:00","packetId":2,"userId":1}
+2017-12-08 17:16:00 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:16:00","packetId":2,"userId":1}
+2017-12-08 17:16:00 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:16:00 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 3
+2017-12-08 17:16:01 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:16:01","packetId":3,"userId":1}
+2017-12-08 17:16:01 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:16:01","packetId":3,"userId":1}
+2017-12-08 17:16:01 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:16:01 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 4
+2017-12-08 17:16:02 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:16:02","packetId":4,"userId":1}
+2017-12-08 17:16:02 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:16:02","packetId":4,"userId":1}
+2017-12-08 17:16:02 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:16:02 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 5
+2017-12-08 17:16:03 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:16:03 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:16:03 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:16:03 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:16:03 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Interrupted.
+2017-12-08 17:16:03 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Input socket closed
+2017-12-08 17:16:03 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - java.lang.InterruptedException
+	at com.apu.auctiondesktop.nw.SendingTask.run(SendingTask.java:55)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:16:03 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Interrupted.
+2017-12-08 17:16:03 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Output socket closed
+2017-12-08 17:16:03 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:16:03 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:16:03 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:16:03 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Socket closed
+2017-12-08 17:17:33 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Client started
+2017-12-08 17:17:33 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Try to connect
+2017-12-08 17:17:33 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"REGISTRATION","time":"2017.12.08 17:17:33","packetId":0,"userId":1}
+2017-12-08 17:17:33 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"message":"Registration answer","queryType":"ANSWER","time":"2017.12.08 17:17:33","packetId":0,"userId":1}
+2017-12-08 17:17:33 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Ask for registration query received
+2017-12-08 17:17:33 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 1
+2017-12-08 17:17:34 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:17:34","packetId":1,"userId":1}
+2017-12-08 17:17:34 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:17:34","packetId":1,"userId":1}
+2017-12-08 17:17:34 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:17:34 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 2
+2017-12-08 17:17:35 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:17:35","packetId":2,"userId":1}
+2017-12-08 17:17:35 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:17:35","packetId":2,"userId":1}
+2017-12-08 17:17:35 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:17:35 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 3
+2017-12-08 17:17:36 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:17:36","packetId":3,"userId":1}
+2017-12-08 17:17:36 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:17:36","packetId":3,"userId":1}
+2017-12-08 17:17:36 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:17:36 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 4
+2017-12-08 17:17:37 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:17:37 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:17:37 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:17:37 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:17:37 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Interrupted.
+2017-12-08 17:17:37 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Input socket closed
+2017-12-08 17:17:37 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - java.lang.InterruptedException
+	at com.apu.auctiondesktop.nw.SendingTask.run(SendingTask.java:55)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:17:37 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Interrupted.
+2017-12-08 17:17:37 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Output socket closed
+2017-12-08 17:17:37 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:17:37 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:17:37 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:17:37 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.Network) - Network thread. Socket closed
+2017-12-08 17:23:29 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Client started
+2017-12-08 17:23:29 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Try to connect
+2017-12-08 17:23:29 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"REGISTRATION","time":"2017.12.08 17:23:29","packetId":0,"userId":1}
+2017-12-08 17:23:29 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"message":"Registration answer","queryType":"ANSWER","time":"2017.12.08 17:23:29","packetId":0,"userId":1}
+2017-12-08 17:23:29 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Ask for registration query received
+2017-12-08 17:23:29 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 1
+2017-12-08 17:23:30 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:23:30","packetId":1,"userId":1}
+2017-12-08 17:23:30 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:23:30","packetId":1,"userId":1}
+2017-12-08 17:23:30 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:23:30 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 2
+2017-12-08 17:23:31 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:23:31","packetId":2,"userId":1}
+2017-12-08 17:23:31 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:23:31","packetId":2,"userId":1}
+2017-12-08 17:23:31 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:23:31 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 3
+2017-12-08 17:23:32 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:23:32","packetId":3,"userId":1}
+2017-12-08 17:23:32 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:23:32","packetId":3,"userId":1}
+2017-12-08 17:23:32 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:23:32 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 4
+2017-12-08 17:23:33 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:23:33","packetId":4,"userId":1}
+2017-12-08 17:23:33 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:23:33","packetId":4,"userId":1}
+2017-12-08 17:23:33 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:23:33 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 5
+2017-12-08 17:23:34 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:23:34","packetId":5,"userId":1}
+2017-12-08 17:23:34 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:23:34","packetId":5,"userId":1}
+2017-12-08 17:23:34 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:23:34 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 6
+2017-12-08 17:23:34 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:23:34 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:23:34 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:23:34 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:23:34 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Interrupted.
+2017-12-08 17:23:34 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Input socket closed
+2017-12-08 17:23:34 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - java.lang.InterruptedException
+	at com.apu.auctiondesktop.nw.SendingTask.run(SendingTask.java:55)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:23:34 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Interrupted.
+2017-12-08 17:23:34 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Output socket closed
+2017-12-08 17:23:34 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:23:34 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:23:34 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:23:34 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Socket closed
+2017-12-08 17:23:34 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Client stop
+2017-12-08 17:23:34 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network stop
+2017-12-08 17:23:55 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Client started
+2017-12-08 17:23:55 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Try to connect
+2017-12-08 17:23:55 DEBUG Thread-10 - (com.apu.auctiondesktop.nw.ReceivingTask) - java.net.SocketException: Socket is closed
+	at java.net.Socket.getInputStream(Socket.java:903)
+	at com.apu.auctiondesktop.nw.ReceivingTask.run(ReceivingTask.java:46)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:23:55 DEBUG Thread-10 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Message - Error
+2017-12-08 17:23:55 DEBUG Thread-9 - (com.apu.auctiondesktop.nw.SendingTask) - java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:943)
+	at com.apu.auctiondesktop.nw.SendingTask.run(SendingTask.java:50)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:23:55 DEBUG Thread-9 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Message - Error.
+2017-12-08 17:23:55 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:23:55 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:23:55 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:23:55 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:23:55 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:23:55 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:23:55 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:23:55 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network thread. Socket closed
+2017-12-08 17:23:55 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Client stop
+2017-12-08 17:23:55 DEBUG Thread-8 - (com.apu.auctiondesktop.nw.Network) - Network stop
+2017-12-08 17:31:52 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Client started
+2017-12-08 17:31:52 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Try to connect
+2017-12-08 17:31:52 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"REGISTRATION","time":"2017.12.08 17:31:52","packetId":0,"userId":1}
+2017-12-08 17:31:52 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"message":"Registration answer","queryType":"ANSWER","time":"2017.12.08 17:31:52","packetId":0,"userId":1}
+2017-12-08 17:31:52 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Ask for registration query received
+2017-12-08 17:31:52 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 1
+2017-12-08 17:31:53 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:31:53","packetId":1,"userId":1}
+2017-12-08 17:31:53 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:31:53","packetId":1,"userId":1}
+2017-12-08 17:31:53 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:31:53 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 2
+2017-12-08 17:31:54 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:31:54","packetId":2,"userId":1}
+2017-12-08 17:31:54 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:31:54","packetId":2,"userId":1}
+2017-12-08 17:31:54 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:31:54 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 3
+2017-12-08 17:31:55 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:31:55","packetId":3,"userId":1}
+2017-12-08 17:31:55 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:31:55","packetId":3,"userId":1}
+2017-12-08 17:31:55 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:31:55 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 4
+2017-12-08 17:31:56 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:31:56","packetId":4,"userId":1}
+2017-12-08 17:31:56 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:31:56","packetId":4,"userId":1}
+2017-12-08 17:31:56 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:31:56 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 5
+2017-12-08 17:31:56 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:31:56 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:31:56 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:31:56 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:31:56 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Interrupted.
+2017-12-08 17:31:56 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Input socket closed
+2017-12-08 17:31:56 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - java.lang.InterruptedException
+	at com.apu.auctiondesktop.nw.SendingTask.run(SendingTask.java:55)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:31:56 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Interrupted.
+2017-12-08 17:31:56 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Output socket closed
+2017-12-08 17:31:56 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:31:56 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:31:56 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:36:39 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Client started
+2017-12-08 17:36:39 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Try to connect
+2017-12-08 17:36:39 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"REGISTRATION","time":"2017.12.08 17:36:39","packetId":0,"userId":1}
+2017-12-08 17:36:39 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"message":"Registration answer","queryType":"ANSWER","time":"2017.12.08 17:36:39","packetId":0,"userId":1}
+2017-12-08 17:36:39 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Ask for registration query received
+2017-12-08 17:36:39 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 1
+2017-12-08 17:36:40 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:36:40","packetId":1,"userId":1}
+2017-12-08 17:36:40 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:36:40","packetId":1,"userId":1}
+2017-12-08 17:36:40 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:36:40 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 2
+2017-12-08 17:36:41 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:36:41","packetId":2,"userId":1}
+2017-12-08 17:36:41 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:36:41","packetId":2,"userId":1}
+2017-12-08 17:36:41 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:36:41 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 3
+2017-12-08 17:36:42 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:36:42","packetId":3,"userId":1}
+2017-12-08 17:36:42 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:36:42","packetId":3,"userId":1}
+2017-12-08 17:36:42 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:36:42 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 4
+2017-12-08 17:36:43 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:36:43 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:36:43 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:36:43 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:36:43 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Interrupted.
+2017-12-08 17:36:43 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Input socket closed
+2017-12-08 17:36:43 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - java.lang.InterruptedException
+	at com.apu.auctiondesktop.nw.SendingTask.run(SendingTask.java:55)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:36:43 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Interrupted.
+2017-12-08 17:36:43 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Output socket closed
+2017-12-08 17:36:43 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:36:43 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:36:43 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:36:56 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - java.net.SocketException: Socket is closed
+	at java.net.Socket.shutdownInput(Socket.java:1521)
+	at com.apu.auctiondesktop.nw.Network.stopNetwork(Network.java:89)
+	at com.apu.auctiondesktop.nw.Network.clientRun(Network.java:124)
+	at com.apu.auctiondesktop.nw.Network.run(Network.java:104)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:36:56 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Client stop
+2017-12-08 17:36:56 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network stop
+2017-12-08 17:37:21 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Client started
+2017-12-08 17:37:21 DEBUG JavaFX Application Thread - (com.apu.auctiondesktop.nw.client.Client) - Try to connect
+2017-12-08 17:37:21 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"REGISTRATION","time":"2017.12.08 17:37:21","packetId":0,"userId":1}
+2017-12-08 17:37:21 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"message":"Registration answer","queryType":"ANSWER","time":"2017.12.08 17:37:21","packetId":0,"userId":1}
+2017-12-08 17:37:21 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Ask for registration query received
+2017-12-08 17:37:21 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 1
+2017-12-08 17:37:22 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:37:22","packetId":1,"userId":1}
+2017-12-08 17:37:22 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:37:22","packetId":1,"userId":1}
+2017-12-08 17:37:22 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:37:22 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 2
+2017-12-08 17:37:23 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:37:23","packetId":2,"userId":1}
+2017-12-08 17:37:23 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:37:23","packetId":2,"userId":1}
+2017-12-08 17:37:23 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:37:23 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 3
+2017-12-08 17:37:24 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - send:{"queryType":"POLL","time":"2017.12.08 17:37:24","packetId":3,"userId":1}
+2017-12-08 17:37:24 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - {"auctionLots":[{"lotId":1,"startPrice":10,"lotName":"Book","lastRate":0,"lastRateUserId":0,"amountObservers":1},{"lotId":2,"startPrice":25,"lotName":"TVset","lastRate":0,"lastRateUserId":0,"amountObservers":1}],"queryType":"POLL_ANSWER","time":"2017.12.08 17:37:24","packetId":3,"userId":1}
+2017-12-08 17:37:24 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - Poll answer query to controller
+2017-12-08 17:37:24 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.NetworkController) - 4
+2017-12-08 17:37:25 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Timer stopped
+2017-12-08 17:37:25 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread try to interrupt
+2017-12-08 17:37:25 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread try to interrupt
+2017-12-08 17:37:25 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread wait
+2017-12-08 17:37:25 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Interrupted.
+2017-12-08 17:37:25 DEBUG Thread-6 - (com.apu.auctiondesktop.nw.ReceivingTask) - Receiving thread. Input socket closed
+2017-12-08 17:37:25 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - java.lang.InterruptedException
+	at com.apu.auctiondesktop.nw.SendingTask.run(SendingTask.java:55)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-12-08 17:37:25 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Interrupted.
+2017-12-08 17:37:25 DEBUG Thread-5 - (com.apu.auctiondesktop.nw.SendingTask) - Sending thread. Output socket closed
+2017-12-08 17:37:25 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Sending thread interrupted
+2017-12-08 17:37:25 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread wait
+2017-12-08 17:37:25 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Receiving thread interrupted
+2017-12-08 17:37:25 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network thread. Socket closed
+2017-12-08 17:37:25 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Client stop
+2017-12-08 17:37:25 DEBUG Thread-4 - (com.apu.auctiondesktop.nw.Network) - Network stop

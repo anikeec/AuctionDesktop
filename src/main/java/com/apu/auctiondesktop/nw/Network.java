@@ -67,8 +67,12 @@ public class Network implements Runnable {
                                                         socket));
         receivingThread.start();
     }
+
+    public void stop() {
+        messagesQueue.add(new Message("Error"));
+    }
     
-    private void stop() throws IOException {        
+    private void stopNetwork() {        
         try {
             timer.cancel();            
             log.debug(classname, "Network thread. Timer stopped");
@@ -82,9 +86,9 @@ public class Network implements Runnable {
             log.debug(classname, "Network thread. Receiving thread wait");
             receivingThread.join();
             log.debug(classname, "Network thread. Receiving thread interrupted");
-            socket.close();
+            socket.close();            
             log.debug(classname, "Network thread. Socket closed");
-        } catch (InterruptedException ex) {
+        } catch (InterruptedException | IOException ex) {
             log.debug(classname,ExceptionUtils.getStackTrace(ex));
         }
     }
@@ -96,6 +100,7 @@ public class Network implements Runnable {
             serverRun();
         else
             clientRun();
+        log.debug(classname,"Network stop");
     }
     
     private void clientRun() {
@@ -114,10 +119,11 @@ public class Network implements Runnable {
                 Message mess = messagesQueue.take();
                 if(mess.getMessage().equals("Error") || 
                    mess.getMessage().equals("Socket closed")) {
-                    stop();
-                    break;
+                    stopNetwork();
+                    log.debug(classname,"Client stop");
+                    return;
                 }
-            } catch (InterruptedException | IOException ex) {
+            } catch (InterruptedException ex) {
                 log.debug(classname,ExceptionUtils.getStackTrace(ex));
             }
         }

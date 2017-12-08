@@ -1,5 +1,7 @@
 package com.apu.auctiondesktop;
 
+import com.apu.auctiondesktop.nw.client.Client;
+import com.apu.auctiondesktop.utils.Log;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +11,10 @@ import javafx.stage.Stage;
 
 
 public class MainApp extends Application {
+    
+    private static final Log log = Log.getInstance();    
+    
+    static Client client;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -30,8 +36,8 @@ public class MainApp extends Application {
      *
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        launch(args);
+    public static void main(String[] args) {        
+        launch(args);        
     }
 
 }
