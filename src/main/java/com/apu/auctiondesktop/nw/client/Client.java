@@ -6,10 +6,13 @@
 package com.apu.auctiondesktop.nw.client;
 
 import com.apu.auctiondesktop.nw.Network;
+import com.apu.auctiondesktop.nw.entity.Message;
 import com.apu.auctiondesktop.nw.entity.User;
 import com.apu.auctiondesktop.utils.Log;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
 /**
  *
@@ -18,17 +21,20 @@ import java.net.Socket;
 public class Client {
     private static final Log log = Log.getInstance();
     private final Class classname = Client.class;
-    private final Socket clientSocket; 
+    private Socket clientSocket; 
     private static Network network;
     private static final int CONNECTION_PORT = 5050;
     private static final String CONNECTION_HOST = "localhost";
+    final int MESSAGE_QUEUE_SIZE = 10;
+    private BlockingQueue<Message> messagesQueue = new ArrayBlockingQueue<>(MESSAGE_QUEUE_SIZE);
+    private Thread networkThread;
     
     private static ClientState clientState = ClientState.NOT_CONNECTED;
     
     private static Client instance;
 
     private Client() throws IOException {            
-        clientSocket = new Socket(CONNECTION_HOST, CONNECTION_PORT);
+        
     }
     
     public static Client getInstance() throws IOException {
@@ -46,6 +52,7 @@ public class Client {
     }   
 
     public void start() throws IOException {
+        clientSocket = new Socket(CONNECTION_HOST, CONNECTION_PORT);
         log.debug(classname, "Client started");         
         int usedId = 1;
         log.debug(classname, "Try to connect");
@@ -53,13 +60,17 @@ public class Client {
     }
     
     public void stop() throws IOException {
-        network.stop();
+        messagesQueue.add(new Message("Error"));
+        while(networkThread.isAlive()){};
+        clientSocket = null;
+        log.debug(classname, "Socket = null");
     }
     
     private void handleSocket(int userId) {
         User user = new User(userId, clientSocket);
-        network = new Network(user, clientSocket, false);
-        new Thread(network).start();
+        network = new Network(user, clientSocket, messagesQueue, false);
+        networkThread = new Thread(network);
+        networkThread.start();
     }
 
 }

@@ -25,7 +25,7 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
  */
 public class Network implements Runnable {
     final int QUEUE_SIZE = 10;
-    final int MESSAGE_QUEUE_SIZE = 10;
+    
     
     private static final Log log = Log.getInstance();
     private final Class classname = Network.class;
@@ -41,16 +41,20 @@ public class Network implements Runnable {
     private Thread sendingThread;
     private Thread receivingThread;
 
-    public Network(User user, Socket socket, boolean runAsServer) {
+    public Network(User user, 
+                    Socket socket, 
+                    BlockingQueue<Message> messagesQueue, 
+                    boolean runAsServer) {
         this.user = user;
         this.socket = socket;
+        this.messagesQueue = messagesQueue;
         this.isServer = runAsServer;
     }   
     
     private void init() {
         queriesQueue = new ArrayBlockingQueue<>(QUEUE_SIZE);
         sendedQueriesQueue = new ArrayBlockingQueue<>(QUEUE_SIZE);
-        messagesQueue = new ArrayBlockingQueue<>(MESSAGE_QUEUE_SIZE);
+        
         
         NetworkController networkController = 
                 new NetworkController(user, queriesQueue, sendedQueriesQueue);
@@ -66,6 +70,10 @@ public class Network implements Runnable {
                                                         messagesQueue,
                                                         socket));
         receivingThread.start();
+    }
+    
+    public synchronized BlockingQueue<Message> getMessagesQueue() {
+        return messagesQueue;
     }
 
     public void stop() {
