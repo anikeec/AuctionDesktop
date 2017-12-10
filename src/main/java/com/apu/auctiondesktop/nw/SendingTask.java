@@ -77,16 +77,7 @@ public class SendingTask implements Runnable {
         } catch (InterruptedException ex) {
             log.debug(classname,ExceptionUtils.getStackTrace(ex));
             log.debug(classname, "Sending thread. Interrupted.");
-        } finally {            
-            try {                
-                if(os != null) {
-                    os.close();
-                    log.debug(classname, "Sending thread. Output socket closed");
-                }
-            } catch (IOException ex) {
-                log.debug(classname,ExceptionUtils.getStackTrace(ex));
-            }
-        }
+        } finally { }
     }
     
 }

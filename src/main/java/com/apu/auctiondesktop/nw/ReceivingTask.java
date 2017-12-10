@@ -12,7 +12,10 @@ import com.apu.auctiondesktop.utils.Log;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.util.concurrent.BlockingQueue;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 /**
@@ -41,12 +44,11 @@ public class ReceivingTask implements Runnable {
     @Override
     public void run() {
         InputStream is = null;
-        try {
             try {
                 is = socket.getInputStream();
                 String line;
                 String str;
-                int amount;
+                int amount = 0;
                 StringBuilder sb = new StringBuilder();;
                 byte[] bytes = new byte[1024];
                 while(!socket.isClosed()) {                    
@@ -54,8 +56,17 @@ public class ReceivingTask implements Runnable {
                         log.debug(classname, "Receiving thread. Interrupted.");
                         break;
                     }
-                    if(is.available() == 0) continue;
-                    amount = is.read(bytes, 0, 1024);
+//                    if(is.available() == 0) continue;
+                    try {
+                        amount = is.read(bytes, 0, 1024);
+                    } catch (SocketTimeoutException ex) {
+                        continue;
+                    }
+                    if(amount == -1) {
+                        System.out.println("Receive end of socket.");
+                        break;
+                    }
+                    if(amount == 0) continue;
                     str = new String(bytes, 0, amount);
                     sb.append(str);
                     if(sb.toString().contains("\r\n")) {
@@ -67,19 +78,13 @@ public class ReceivingTask implements Runnable {
                         }
                     }                   
                 }
-            } catch (Exception ex) {
+            } catch (InterruptedException ex) {
                 log.debug(classname,ExceptionUtils.getStackTrace(ex));
                 log.debug(classname, "Receiving thread. Message - Error");
                 messagesQueue.add(new Message("Error"));                
-            } finally { 
-                if(is != null) { 
-                    is.close();
-                    log.debug(classname, "Receiving thread. Input socket closed");           
-                }                    
-            }
-        } catch (IOException ex) {
-            log.debug(classname,ExceptionUtils.getStackTrace(ex));    
-        } 
+            } catch (Exception ex) { 
+            Logger.getLogger(ReceivingTask.class.getName()).log(Level.SEVERE, null, ex);
+        } finally { }
     }
     
 }

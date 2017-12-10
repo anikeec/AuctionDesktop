@@ -25,6 +25,7 @@ public class Client {
     private static Network network;
     private static final int CONNECTION_PORT = 5050;
     private static final String CONNECTION_HOST = "localhost";
+    private final int SOCKET_RECEIVE_TIMEOUT = 1000;
     final int MESSAGE_QUEUE_SIZE = 10;
     private BlockingQueue<Message> messagesQueue = new ArrayBlockingQueue<>(MESSAGE_QUEUE_SIZE);
     private Thread networkThread;
@@ -53,6 +54,7 @@ public class Client {
 
     public void start() throws IOException {
         clientSocket = new Socket(CONNECTION_HOST, CONNECTION_PORT);
+        clientSocket.setSoTimeout(SOCKET_RECEIVE_TIMEOUT);
         log.debug(classname, "Client started");         
         int usedId = 1;
         log.debug(classname, "Try to connect");
@@ -62,8 +64,7 @@ public class Client {
     public void stop() throws IOException {
         messagesQueue.add(new Message("Error"));
         while(networkThread.isAlive()){};
-        clientSocket = null;
-        log.debug(classname, "Socket = null");
+        log.debug(classname, "Client finished");
     }
     
     private void handleSocket(int userId) {
