@@ -5,6 +5,7 @@
  */
 package com.apu.auctiondesktop.nw.utils;
 
+import com.apu.auctionapi.AuctionLotEntity;
 import com.apu.auctionapi.AuctionQuery;
 import com.apu.auctionapi.query.NewRateQuery;
 import com.apu.auctionapi.query.NotifyQuery;
@@ -14,6 +15,8 @@ import com.apu.auctionapi.query.PollQuery;
 import com.apu.auctionapi.QueryType;
 import com.apu.auctionapi.answer.AnswerQuery;
 import com.apu.auctionapi.query.RegistrationQuery;
+import com.apu.auctiondesktop.AuctionLot;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -67,7 +70,29 @@ public class Decoder {
     }
     
     private void decode(PollAnswerQuery result)  throws Exception {
-         
+        System.out.println("PollAnswerQuery packet");
+        JsonArray array = rootObject.get("auctionLots").getAsJsonArray();
+        JsonObject obj;
+        Integer lotId, startPrice, lastRate,lastRateUserId, amountObservers;
+        String lotName;
+        AuctionLotEntity lot;
+        for(JsonElement element:array) {
+            obj = element.getAsJsonObject();
+            lotId = obj.get("lotId").getAsInt();
+            startPrice = obj.get("startPrice").getAsInt();
+            lotName = obj.get("lotName").getAsString();
+            lastRate = obj.get("lastRate").getAsInt();
+            lastRateUserId = obj.get("lastRateUserId").getAsInt();
+            amountObservers = obj.get("amountObservers").getAsInt();
+            lot = new AuctionLotEntity(lotId,
+                                        startPrice,
+                                        lotName,
+                                        lastRate,
+                                        lastRateUserId,
+                                        amountObservers);
+            result.addLotToCollection(lot);
+        }
+        System.out.println("");
     }
     
     public AuctionQuery decode(String query) throws Exception {

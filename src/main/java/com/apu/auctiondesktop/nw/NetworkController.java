@@ -5,12 +5,14 @@
  */
 package com.apu.auctiondesktop.nw;
 
+import com.apu.auctionapi.AuctionLotEntity;
 import com.apu.auctionapi.answer.AnswerQuery;
 import com.apu.auctionapi.AuctionQuery;
 import com.apu.auctionapi.query.DisconnectQuery;
 import com.apu.auctionapi.query.PingQuery;
 import com.apu.auctionapi.answer.PollAnswerQuery;
 import com.apu.auctionapi.query.RegistrationQuery;
+import com.apu.auctiondesktop.GUIModel;
 import com.apu.auctiondesktop.nw.client.Client;
 import com.apu.auctiondesktop.nw.client.ClientState;
 import com.apu.auctiondesktop.nw.entity.User;
@@ -18,6 +20,7 @@ import com.apu.auctiondesktop.nw.utils.Decoder;
 import com.apu.auctiondesktop.utils.Log;
 import com.apu.auctiondesktop.utils.Time;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.BlockingQueue;
 
 /**
@@ -46,27 +49,27 @@ public class NetworkController {
     }
     
     public void handle(String queryStr) throws IOException, Exception {
-        AuctionQuery query = decoder.decode(queryStr);      
-        AuctionQuery srcQuery = getLastSendedQuery();
+        AuctionQuery answer = decoder.decode(queryStr);      
+        AuctionQuery query = getLastSendedQuery();
         
-        if(query instanceof AnswerQuery) {
-            if(srcQuery instanceof RegistrationQuery) {
-                handle((RegistrationQuery)srcQuery, (AnswerQuery)query);
+        if(answer instanceof AnswerQuery) {
+            if(query instanceof RegistrationQuery) {
+                handle((RegistrationQuery)query, (AnswerQuery)answer);
             } else {
-                handle((AnswerQuery)query);
+                handle((AnswerQuery)answer);
             }
-        } else if(query instanceof DisconnectQuery) {
-            handle((DisconnectQuery)query);
-        } else if(query instanceof PingQuery) { 
-            handle((PingQuery)query);
-        } else if(query instanceof PollAnswerQuery) { 
-            handle((PollAnswerQuery)query);
+        } else if(answer instanceof DisconnectQuery) {
+            handle((DisconnectQuery)answer);
+        } else if(answer instanceof PingQuery) { 
+            handle((PingQuery)answer);
+        } else if(answer instanceof PollAnswerQuery) { 
+            handle((PollAnswerQuery)answer);
         } else {
             
         }        
         
-        if(srcQuery != null) {
-            if(query.getPacketId() == srcQuery.getPacketId()) {
+        if(query != null) {
+            if(answer.getPacketId() == query.getPacketId()) {
                 truePacketsValue++;
             }
             log.debug(classname, "" + truePacketsValue);
@@ -102,8 +105,23 @@ public class NetworkController {
     }
     
     public void handle(PollAnswerQuery query) {
-        log.debug(classname, "Poll answer query to controller");
-        
+        GUIModel model = GUIModel.getInstance();
+        if(query.getAuctionLots().size() > 0) {
+            AuctionLotEntity lotEntity = query.getAuctionLots().get(0);
+            model.setLotName(lotEntity.getLotName());
+            model.setStartPrice(lotEntity.getStartPrice());        
+            model.setCurrentRate(lotEntity.getLastRate()); 
+            model.setCurrentWinner("" + lotEntity.getLastRateUserId());
+            model.setAmountObservers(lotEntity.getAmountObservers());
+        } else {            
+            model.setLotName("");
+            model.setStartPrice(0);
+            model.setCurrentRate(model.getStartPrice());        
+            model.setCurrentWinner("0");
+            model.setAmountObservers(0);
+        }
+        model.setLastTimeUpdate(query.getTime());
+        log.debug(classname, "Poll answer query to controller");        
     }
     
     public void handle(RegistrationQuery srcQuery, AnswerQuery answerQuery) {

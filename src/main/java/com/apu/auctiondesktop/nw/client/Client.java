@@ -52,13 +52,13 @@ public class Client {
         clientState = state;
     }   
 
-    public void start() throws IOException {
+    public void start(int userId) throws IOException {
         clientSocket = new Socket(CONNECTION_HOST, CONNECTION_PORT);
         clientSocket.setSoTimeout(SOCKET_RECEIVE_TIMEOUT);
         log.debug(classname, "Client started");         
-        int usedId = 1;
+//        int usedId = 1;
         log.debug(classname, "Try to connect");
-        handleSocket(usedId);               
+        handleSocket(userId);               
     }
     
     public void stop() throws IOException {

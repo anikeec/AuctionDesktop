@@ -13,8 +13,6 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
     
     private static final Log log = Log.getInstance();    
-    
-    static Client client;
 
     @Override
     public void start(Stage stage) throws Exception {
