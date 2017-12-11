@@ -6,30 +6,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="349.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apu.auctiondesktop.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="390.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apu.auctiondesktop.FXMLController">
     <children>
-        <Button fx:id="newRateButton" layoutX="193.0" layoutY="304.0" onAction="#handleNewRateButtonAction" onKeyReleased="#handleNewRateButtonKeyReleased" onMouseReleased="#handleNewRateButtonMouseReleased" text="Increase price!" />
-      <Button fx:id="connectButton" layoutX="29.0" layoutY="304.0" onAction="#handleConnectButtonAction" onKeyReleased="#handleConnectButtonKeyReleased" onMouseReleased="#handleConnectButtonMouseReleased" text="Connect" />
-      <TextField fx:id="TextFieldState" disable="true" layoutX="146.0" layoutY="26.0" />
-      <Label layoutX="24.0" layoutY="30.0" text="State" />
-      <TextField fx:id="TextFieldLotName" disable="true" layoutX="146.0" layoutY="57.0" />
-      <Label layoutX="25.0" layoutY="63.0" text="Lot name" />
-      <TextField fx:id="TextFieldStartPrice" disable="true" layoutX="146.0" layoutY="89.0" />
-      <Label layoutX="25.0" layoutY="95.0" text="Start price" />
-      <TextField fx:id="TextFieldCurrentRate" disable="true" layoutX="146.0" layoutY="124.0" />
-      <Label layoutX="25.0" layoutY="130.0" text="Current rate" />
-      <TextField fx:id="TextFieldCurrentWinner" disable="true" layoutX="146.0" layoutY="158.0" />
-      <Label layoutX="25.0" layoutY="164.0" text="Current winner ID" />
+        <Button fx:id="newRateButton" layoutX="195.0" layoutY="343.0" onAction="#handleNewRateButtonAction" onKeyReleased="#handleNewRateButtonKeyReleased" onMouseReleased="#handleNewRateButtonMouseReleased" text="Increase price!" />
+      <Button fx:id="connectButton" layoutX="29.0" layoutY="343.0" onAction="#handleConnectButtonAction" onKeyReleased="#handleConnectButtonKeyReleased" onMouseReleased="#handleConnectButtonMouseReleased" text="Connect" />
+      <TextField fx:id="TextFieldState" disable="true" layoutX="148.0" layoutY="26.0" />
+      <Label layoutX="26.0" layoutY="30.0" text="State" />
+      <TextField fx:id="TextFieldLotName" disable="true" layoutX="148.0" layoutY="96.0" />
+      <Label layoutX="27.0" layoutY="102.0" text="Lot name" />
+      <TextField fx:id="TextFieldStartPrice" disable="true" layoutX="148.0" layoutY="128.0" />
+      <Label layoutX="27.0" layoutY="134.0" text="Start price" />
+      <TextField fx:id="TextFieldCurrentRate" disable="true" layoutX="148.0" layoutY="163.0" />
+      <Label layoutX="27.0" layoutY="169.0" text="Current rate" />
+      <TextField fx:id="TextFieldCurrentWinner" disable="true" layoutX="148.0" layoutY="197.0" />
+      <Label layoutX="27.0" layoutY="203.0" text="Current winner ID" />
       <Label fx:id="LabelResult" layoutX="146.0" layoutY="3.0" prefHeight="22.0" prefWidth="153.0">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="TextFieldTimeLastUpdate" disable="true" layoutX="146.0" layoutY="228.0" />
-      <Label layoutX="24.0" layoutY="232.0" text="Time last update" />
-      <TextField fx:id="TextFieldObservers" disable="true" layoutX="146.0" layoutY="193.0" />
-      <Label layoutX="25.0" layoutY="197.0" text="Observers" />
-      <TextField fx:id="TextFieldUserId" layoutX="146.0" layoutY="265.0" />
-      <Label layoutX="24.0" layoutY="269.0" text="User ID" />
+      <TextField fx:id="TextFieldTimeLastUpdate" disable="true" layoutX="148.0" layoutY="267.0" />
+      <Label layoutX="26.0" layoutY="271.0" text="Time last update" />
+      <TextField fx:id="TextFieldObservers" disable="true" layoutX="148.0" layoutY="232.0" />
+      <Label layoutX="27.0" layoutY="236.0" text="Observers" />
+      <TextField fx:id="TextFieldUserId" layoutX="148.0" layoutY="304.0" />
+      <Label layoutX="26.0" layoutY="308.0" text="User ID" />
+      <TextField fx:id="TextFieldLotId" disable="true" layoutX="148.0" layoutY="61.0" />
+      <Label layoutX="27.0" layoutY="65.0" text="Lot ID" />
     </children>
 </AnchorPane>

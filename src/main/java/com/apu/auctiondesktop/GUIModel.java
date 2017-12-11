@@ -15,6 +15,7 @@ import javafx.beans.property.SimpleStringProperty;
 public class GUIModel {
     private SimpleStringProperty lastTimeUpdate;
     private SimpleStringProperty state;
+    private SimpleIntegerProperty lotId;
     private SimpleStringProperty lotName;
     private SimpleIntegerProperty startPrice;
     private SimpleIntegerProperty currentRate;
@@ -67,6 +68,21 @@ public class GUIModel {
             this.lotName = new SimpleStringProperty(); 
         }
         return this.lotName;
+    }
+    
+    public SimpleIntegerProperty lotIdProperty() {
+        if(this.lotId == null) { 
+            this.lotId = new SimpleIntegerProperty(); 
+        }
+        return this.lotId;
+    }
+    
+    public final Integer getLotId() { 
+        return this.lotIdProperty().get(); 
+    }
+
+    public final void setLotId(Integer value) { 
+        this.lotIdProperty().set(value); 
     }
     
     public final String getLotName() { 

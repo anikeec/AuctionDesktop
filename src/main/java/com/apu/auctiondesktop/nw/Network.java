@@ -6,6 +6,7 @@
 package com.apu.auctiondesktop.nw;
 
 import com.apu.auctionapi.AuctionQuery;
+import com.apu.auctionapi.query.NewRateQuery;
 import com.apu.auctionapi.query.RegistrationQuery;
 import com.apu.auctiondesktop.nw.client.ClientState;
 import static com.apu.auctiondesktop.nw.client.Client.getClientState;
@@ -70,6 +71,11 @@ public class Network implements Runnable {
                                                         messagesQueue,
                                                         socket));
         receivingThread.start();
+    }
+    
+    public synchronized void addNewRate(int lotId, int newRate) {
+        NewRateQuery query = new NewRateQuery(lotId, newRate, 0, user.getUserId(), "");
+        queriesQueue.add(query);
     }
     
     public synchronized BlockingQueue<Message> getMessagesQueue() {

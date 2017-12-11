@@ -108,12 +108,14 @@ public class NetworkController {
         GUIModel model = GUIModel.getInstance();
         if(query.getAuctionLots().size() > 0) {
             AuctionLotEntity lotEntity = query.getAuctionLots().get(0);
+            model.setLotId(lotEntity.getLotId());
             model.setLotName(lotEntity.getLotName());
             model.setStartPrice(lotEntity.getStartPrice());        
             model.setCurrentRate(lotEntity.getLastRate()); 
             model.setCurrentWinner("" + lotEntity.getLastRateUserId());
             model.setAmountObservers(lotEntity.getAmountObservers());
-        } else {            
+        } else {
+            model.setLotId(0);            
             model.setLotName("");
             model.setStartPrice(0);
             model.setCurrentRate(model.getStartPrice());        

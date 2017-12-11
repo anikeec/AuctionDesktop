@@ -1,6 +1,5 @@
 package com.apu.auctiondesktop;
 
-import com.apu.auctiondesktop.nw.client.Client;
 import com.apu.auctiondesktop.utils.Log;
 import javafx.application.Application;
 import static javafx.application.Application.launch;

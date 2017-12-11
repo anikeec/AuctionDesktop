@@ -67,6 +67,10 @@ public class Client {
         log.debug(classname, "Client finished");
     }
     
+    public void newRateQuery(int lotId, int newRate) {
+        network.addNewRate(lotId, newRate);
+    }
+    
     private void handleSocket(int userId) {
         User user = new User(userId, clientSocket);
         network = new Network(user, clientSocket, messagesQueue, false);
