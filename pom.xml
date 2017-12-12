@@ -63,7 +63,7 @@
     </organization>
 
     <build>
-        <finalName>Auction Desktop</finalName>
+        <finalName>AuctionDesktop</finalName>
         <plugins>
            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

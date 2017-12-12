@@ -28,7 +28,6 @@ public class MainApp extends Application {
 
     @Override
     public void stop() throws Exception {
-//        super.stop(); //To change body of generated methods, choose Tools | Templates.
         Client.getInstance().stop();
     }
 
