@@ -11,5 +11,6 @@ package com.apu.auctiondesktop.nw.client;
  */
 public enum ClientState {
     NOT_CONNECTED,
-    CONNECTED
+    CONNECTED,
+    DISCONNECTED
 }

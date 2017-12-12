@@ -6,8 +6,10 @@
 package com.apu.auctiondesktop.nw;
 
 import com.apu.auctionapi.AuctionQuery;
+import com.apu.auctionapi.query.DisconnectQuery;
 import com.apu.auctionapi.query.NewRateQuery;
 import com.apu.auctionapi.query.RegistrationQuery;
+import com.apu.auctiondesktop.nw.client.Client;
 import com.apu.auctiondesktop.nw.client.ClientState;
 import static com.apu.auctiondesktop.nw.client.Client.getClientState;
 import com.apu.auctiondesktop.nw.entity.Message;
@@ -77,19 +79,18 @@ public class Network implements Runnable {
         NewRateQuery query = new NewRateQuery(lotId, newRate, 0, user.getUserId(), "");
         queriesQueue.add(query);
     }
-    
-    public synchronized BlockingQueue<Message> getMessagesQueue() {
-        return messagesQueue;
-    }
 
     public void stop() {
         messagesQueue.add(new Message("Error"));
     }
     
-    private void stopNetwork() {        
-        try {
-            timer.cancel();            
+    private void stopPolling() {
+        timer.cancel();            
             log.debug(classname, "Network thread. Timer stopped");
+    }
+    
+    private void stopNetwork() {        
+        try {     
             log.debug(classname, "Network thread. Sending thread try to interrupt");
             sendingThread.interrupt();
             log.debug(classname, "Network thread. Receiving thread try to interrupt");
@@ -102,9 +103,21 @@ public class Network implements Runnable {
             log.debug(classname, "Network thread. Receiving thread interrupted");
             socket.close();            
             log.debug(classname, "Network thread. Socket closed");
+            Client.setClientState(ClientState.NOT_CONNECTED);
         } catch (InterruptedException | IOException ex) {
             log.debug(classname,ExceptionUtils.getStackTrace(ex));
         }
+    }
+    
+    private void disconnectNetwork() {            
+        log.debug(classname, "Network thread. Begin disconnected network.");
+        stopPolling();
+        DisconnectQuery query = new DisconnectQuery(0, user.getUserId(), "");
+        queriesQueue.add(query);
+        log.debug(classname, "Network thread. Try to disconnect. Wait.");
+        while(getClientState() != ClientState.DISCONNECTED) {};
+        log.debug(classname, "Network thread. Disconnected.");
+        stopNetwork();
     }
     
     @Override
@@ -132,8 +145,14 @@ public class Network implements Runnable {
         while(true) {
             try {
                 Message mess = messagesQueue.take();
+                if(mess.getMessage().equals("Disconnect")) {
+                   disconnectNetwork();
+                   log.debug(classname,"Client disconnected");
+                   return;
+                }
                 if(mess.getMessage().equals("Error") || 
                    mess.getMessage().equals("Socket closed")) {
+                    stopPolling();
                     stopNetwork();
                     log.debug(classname,"Client stop");
                     return;

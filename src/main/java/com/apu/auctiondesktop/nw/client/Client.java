@@ -53,6 +53,8 @@ public class Client {
     }   
 
     public void start(int userId, int lotId) throws IOException {
+//        clientState = ClientState.NOT_CONNECTED;
+//        messagesQueue.clear();
         clientSocket = new Socket(CONNECTION_HOST, CONNECTION_PORT);
         clientSocket.setSoTimeout(SOCKET_RECEIVE_TIMEOUT);
         log.debug(classname, "Client started");         
@@ -62,8 +64,9 @@ public class Client {
     }
     
     public void stop() throws IOException {
-        messagesQueue.add(new Message("Error"));
+        messagesQueue.add(new Message("Disconnect"));
         while(networkThread.isAlive()){};
+        clientSocket = null;
         log.debug(classname, "Client finished");
     }
     

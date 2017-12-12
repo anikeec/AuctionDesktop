@@ -15,6 +15,7 @@ import com.apu.auctionapi.query.RegistrationQuery;
 import com.apu.auctiondesktop.GUIModel;
 import com.apu.auctiondesktop.nw.client.Client;
 import com.apu.auctiondesktop.nw.client.ClientState;
+import com.apu.auctiondesktop.nw.entity.Message;
 import com.apu.auctiondesktop.nw.entity.User;
 import com.apu.auctiondesktop.nw.utils.Decoder;
 import com.apu.auctiondesktop.utils.Log;
@@ -55,6 +56,8 @@ public class NetworkController {
         if(answer instanceof AnswerQuery) {
             if(query instanceof RegistrationQuery) {
                 handle((RegistrationQuery)query, (AnswerQuery)answer);
+            } else if(query instanceof DisconnectQuery) {
+                handle((DisconnectQuery)query, (AnswerQuery)answer);
             } else {
                 handle((AnswerQuery)answer);
             }
@@ -127,8 +130,13 @@ public class NetworkController {
     }
     
     public void handle(RegistrationQuery srcQuery, AnswerQuery answerQuery) {
-        log.debug(classname, "Ask for registration query received");
+        log.debug(classname, "Answer for registration query received");
         Client.setClientState(ClientState.CONNECTED);        
+    }
+    
+    public void handle(DisconnectQuery srcQuery, AnswerQuery answerQuery) {
+        log.debug(classname, "Answer for disconnect query received");
+        Client.setClientState(ClientState.DISCONNECTED);
     }
     
 }
