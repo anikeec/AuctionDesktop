@@ -52,13 +52,13 @@ public class Client {
         clientState = state;
     }   
 
-    public void start(int userId) throws IOException {
+    public void start(int userId, int lotId) throws IOException {
         clientSocket = new Socket(CONNECTION_HOST, CONNECTION_PORT);
         clientSocket.setSoTimeout(SOCKET_RECEIVE_TIMEOUT);
         log.debug(classname, "Client started");         
 //        int usedId = 1;
         log.debug(classname, "Try to connect");
-        handleSocket(userId);               
+        handleSocket(userId, lotId);               
     }
     
     public void stop() throws IOException {
@@ -71,8 +71,9 @@ public class Client {
         network.addNewRate(lotId, newRate);
     }
     
-    private void handleSocket(int userId) {
+    private void handleSocket(int userId, int lotId) {
         User user = new User(userId, clientSocket);
+        user.addLotToObservableList(lotId);
         network = new Network(user, clientSocket, messagesQueue, false);
         networkThread = new Thread(network);
         networkThread.start();

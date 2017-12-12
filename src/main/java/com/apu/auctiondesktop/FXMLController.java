@@ -16,7 +16,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import org.apache.commons.lang3.exception.ExceptionUtils;
 
 public class FXMLController implements Initializable {
     
@@ -45,12 +44,7 @@ public class FXMLController implements Initializable {
     private TextField TextFieldUserId;
     @FXML
     private TextField TextFieldLotId;
-    
-    
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -148,27 +142,28 @@ public class FXMLController implements Initializable {
         if(button == connectButton) {
             if(connectButton.getText().equals("Connect")) {
                 String userIdStr = TextFieldUserId.getText();
-//                if(userIdStr.equals("")) {
-//                    LabelResult.setText("Error user ID.");
-//                    return;
-//                }
+                String lotIdStr = TextFieldLotId.getText();
                 try {
                     Integer userId = Integer.parseInt(userIdStr);
-                    Client.getInstance().start(userId);
+                    Integer lotId = Integer.parseInt(lotIdStr);
+                    Client.getInstance().start(userId, lotId);
                     LabelResult.setText("Server connected.");
                     connectButton.setText("Disconnect");
                     TextFieldUserId.setDisable(true);
+                    TextFieldLotId.setDisable(true);
                 } catch (NumberFormatException ex) {
-                    LabelResult.setText("Error user ID.");
+                    LabelResult.setText("Error user or lot ID.");
                 } catch (IOException ex) {
                     LabelResult.setText("Error server connect.");
                     TextFieldUserId.setDisable(false);
+                    TextFieldLotId.setDisable(false);
                 }                
             } else {
                 try {
                     Client.getInstance().stop();
                     LabelResult.setText("Server disconnected.");
                     TextFieldUserId.setDisable(false);
+                    TextFieldLotId.setDisable(false);
                 } catch (IOException ex) {
                     LabelResult.setText("Error server disconnect.");
                 }

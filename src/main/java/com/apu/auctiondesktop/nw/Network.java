@@ -118,7 +118,8 @@ public class Network implements Runnable {
     }
     
     private void clientRun() {
-        AuctionQuery query = new RegistrationQuery(user.getUserId());
+        RegistrationQuery query = new RegistrationQuery(user.getUserId());
+        query.addLotIdListToObservableList(user.getObservableLotIdList());
         queriesQueue.add(query);
 
         while(getClientState() == ClientState.NOT_CONNECTED) {};

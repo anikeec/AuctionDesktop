@@ -6,14 +6,17 @@
 package com.apu.auctiondesktop.nw.entity;
 
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author apu
  */
 public class User {
-    private int userId;
-    private Socket socket;
+    private final int userId;
+    private final Socket socket;
+    private final List<Integer> observableLotIdList = new ArrayList<>();
 
     public User(int userId, Socket socket) {
         this.userId = userId;
@@ -27,5 +30,14 @@ public class User {
     public Socket getSocket() {
         return socket;
     }    
+    
+    public void addLotToObservableList(int lotId) {
+        if(!observableLotIdList.contains(lotId))
+            observableLotIdList.add(lotId);
+    }
+
+    public List<Integer> getObservableLotIdList() {
+        return observableLotIdList;
+    }
     
 }
