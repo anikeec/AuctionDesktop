@@ -1,5 +1,6 @@
 package com.apu.auctiondesktop;
 
+import com.apu.auctiondesktop.nw.client.Client;
 import com.apu.auctiondesktop.utils.Log;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -23,6 +24,12 @@ public class MainApp extends Application {
         stage.setTitle("Auction application");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @Override
+    public void stop() throws Exception {
+//        super.stop(); //To change body of generated methods, choose Tools | Templates.
+        Client.getInstance().stop();
     }
 
     /**
