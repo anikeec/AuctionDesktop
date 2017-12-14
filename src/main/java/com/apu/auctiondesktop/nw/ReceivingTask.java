@@ -63,7 +63,7 @@ public class ReceivingTask implements Runnable {
                         continue;
                     }
                     if(amount == -1) {
-                        System.out.println("Receive end of socket.");
+                        log.debug(classname, "Receive end of socket.");
                         break;
                     }
                     if(amount == 0) continue;
