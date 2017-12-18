@@ -53,8 +53,8 @@ public class Client {
     }   
 
     public void start(int userId, int lotId) throws IOException {
-//        clientState = ClientState.NOT_CONNECTED;
-//        messagesQueue.clear();
+        clientState = ClientState.NOT_CONNECTED;
+        messagesQueue.clear();
         clientSocket = new Socket(CONNECTION_HOST, CONNECTION_PORT);
         clientSocket.setSoTimeout(SOCKET_RECEIVE_TIMEOUT);
         log.debug(classname, "Client started");         
