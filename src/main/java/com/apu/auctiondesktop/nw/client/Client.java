@@ -74,6 +74,10 @@ public class Client {
         network.addNewRate(lotId, newRate);
     }
     
+    public void loadLotsQuery() {
+        network.loadAuctionLots();
+    }
+    
     private void handleSocket(int userId, int lotId) {
         User user = new User(userId, clientSocket);
         user.addLotToObservableList(lotId);

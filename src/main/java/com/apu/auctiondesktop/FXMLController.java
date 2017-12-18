@@ -23,6 +23,8 @@ public class FXMLController implements Initializable {
     @FXML
     private Label LabelResult;
     @FXML
+    private Button loadLotsButton;
+    @FXML
     private Button connectButton;
     @FXML
     private Button newRateButton; 
@@ -43,12 +45,11 @@ public class FXMLController implements Initializable {
     @FXML
     private TextField TextFieldUserId;
     @FXML
-    private TextField TextFieldLotId;
+    private TextField TextFieldLotId;    
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         GUIModel model = GUIModel.getInstance();
         model.setLotId(-1);
         model.setStartPrice(-1);
@@ -101,22 +102,6 @@ public class FXMLController implements Initializable {
         });
     }    
 
-    @FXML
-    private void handleNewRateButtonAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void handleConnectButtonAction(ActionEvent event) {  
-    }
-
-    @FXML
-    private void handleNewRateButtonKeyReleased(KeyEvent event) {
-    }
-
-    @FXML
-    private void handleConnectButtonKeyReleased(KeyEvent event) {
-        
-    }
 
     @FXML
     private void handleNewRateButtonMouseReleased(MouseEvent event) {
@@ -147,27 +132,45 @@ public class FXMLController implements Initializable {
                     Integer userId = Integer.parseInt(userIdStr);
                     Integer lotId = Integer.parseInt(lotIdStr);
                     Client.getInstance().start(userId, lotId);
+                    TextFieldState.setText("Connected");
                     LabelResult.setText("Server connected.");
                     connectButton.setText("Disconnect");
                     TextFieldUserId.setDisable(true);
                     TextFieldLotId.setDisable(true);
+                    loadLotsButton.setDisable(true);
                 } catch (NumberFormatException ex) {
                     LabelResult.setText("Error user or lot ID.");
                 } catch (IOException ex) {
                     LabelResult.setText("Error server connect.");
                     TextFieldUserId.setDisable(false);
                     TextFieldLotId.setDisable(false);
+                    loadLotsButton.setDisable(false);
                 }                
             } else {
                 try {
                     Client.getInstance().stop();
+                    TextFieldState.setText("Disconnected");
                     LabelResult.setText("Server disconnected.");
                     TextFieldUserId.setDisable(false);
                     TextFieldLotId.setDisable(false);
+                    loadLotsButton.setDisable(false);
                 } catch (IOException ex) {
                     LabelResult.setText("Error server disconnect.");
                 }
                 connectButton.setText("Connect");
+            }
+        }
+    }
+
+    @FXML
+    private void handleLoadLotsButtonMouseReleased(MouseEvent event) {
+        Object button = event.getSource();
+        if(button == loadLotsButton) {
+            try {
+                Client.getInstance().loadLotsQuery();
+            } catch (IOException ex) {
+                LabelResult.setText("Error load lots.");
+                Logger.getLogger(FXMLController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

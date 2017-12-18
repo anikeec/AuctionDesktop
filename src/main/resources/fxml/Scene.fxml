@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="390.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apu.auctiondesktop.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="390.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apu.auctiondesktop.FXMLController">
     <children>
-        <Button fx:id="newRateButton" layoutX="195.0" layoutY="343.0" onAction="#handleNewRateButtonAction" onKeyReleased="#handleNewRateButtonKeyReleased" onMouseReleased="#handleNewRateButtonMouseReleased" text="Increase price!" />
-      <Button fx:id="connectButton" layoutX="29.0" layoutY="343.0" onAction="#handleConnectButtonAction" onKeyReleased="#handleConnectButtonKeyReleased" onMouseReleased="#handleConnectButtonMouseReleased" text="Connect" />
+        <Button fx:id="newRateButton" layoutX="195.0" layoutY="343.0" onMouseReleased="#handleNewRateButtonMouseReleased" text="Increase price!" />
+      <Button fx:id="connectButton" layoutX="115.0" layoutY="343.0" onMouseReleased="#handleConnectButtonMouseReleased" text="Connect" />
       <TextField fx:id="TextFieldState" disable="true" layoutX="148.0" layoutY="26.0" />
       <Label layoutX="26.0" layoutY="30.0" text="State" />
       <TextField fx:id="TextFieldLotName" editable="false" layoutX="148.0" layoutY="96.0" />
@@ -33,5 +37,6 @@
       <Label layoutX="26.0" layoutY="308.0" text="User ID" />
       <TextField fx:id="TextFieldLotId" layoutX="148.0" layoutY="61.0" />
       <Label layoutX="27.0" layoutY="65.0" text="Lot ID" />
+      <Button fx:id="loadLotsButton" layoutX="29.0" layoutY="343.0" onMouseReleased="#handleLoadLotsButtonMouseReleased" text="Load lots" />
     </children>
 </AnchorPane>
