@@ -51,6 +51,12 @@ public class SendingTask implements Runnable {
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(os));
             String line;
             while(!socket.isClosed()) {
+                try {
+                    Thread.sleep(5);
+                } catch(InterruptedException ex) {
+                    log.debug(classname, "Thread sleep is interrupted.");
+                    break;
+                }
                 if(Thread.currentThread().isInterrupted()) {    
                     throw new InterruptedException();
                 }

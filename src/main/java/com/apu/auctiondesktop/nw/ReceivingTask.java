@@ -51,7 +51,13 @@ public class ReceivingTask implements Runnable {
                 int amount = 0;
                 StringBuilder sb = new StringBuilder();;
                 byte[] bytes = new byte[1024];
-                while(!socket.isClosed()) {                    
+                while(!socket.isClosed()) {
+                    try {
+                        Thread.sleep(5);
+                    } catch(InterruptedException ex) {
+                        log.debug(classname, "Thread sleep is interrupted.");
+                        break;
+                    }
                     if(Thread.currentThread().isInterrupted()) {
                         log.debug(classname, "Receiving thread. Interrupted.");
                         break;
