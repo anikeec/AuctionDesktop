@@ -146,7 +146,7 @@ public class Network implements Runnable {
         PollingTask pollingTask = new PollingTask(user, messagesQueue);
         this.timer = new Timer(false);//run not as daemon
         pollingTask.setQueriesQueue(queriesQueue);
-        timer.scheduleAtFixedRate(pollingTask, 1000, 1000);
+        timer.scheduleAtFixedRate(pollingTask, 1000, 200);
         
         while(true) {
             try {

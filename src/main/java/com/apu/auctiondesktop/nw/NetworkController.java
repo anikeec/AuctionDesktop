@@ -21,6 +21,7 @@ import com.apu.auctiondesktop.nw.utils.Decoder;
 import com.apu.auctiondesktop.utils.Log;
 import com.apu.auctiondesktop.utils.Time;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 
@@ -52,6 +53,8 @@ public class NetworkController {
     public void handle(String queryStr) throws IOException, Exception {
         AuctionQuery answer = decoder.decode(queryStr);      
         AuctionQuery query = getLastSendedQuery();
+        GUIModel.getInstance()
+                .setAnswerTime(Time.getDelay(query.getTime(), answer.getTime()));
         
         if(answer instanceof AnswerQuery) {
             if(query instanceof RegistrationQuery) {
