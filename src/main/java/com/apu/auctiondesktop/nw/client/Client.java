@@ -24,7 +24,7 @@ public class Client {
     private Socket clientSocket; 
     private static Network network;
     private static final int CONNECTION_PORT = 5050;
-    private static final String CONNECTION_HOST = "localhost";
+    private static final String CONNECTION_HOST = "127.0.0.1";
     private final int SOCKET_RECEIVE_TIMEOUT = 1000;
     final int MESSAGE_QUEUE_SIZE = 10;
     private BlockingQueue<Message> messagesQueue = new ArrayBlockingQueue<>(MESSAGE_QUEUE_SIZE);

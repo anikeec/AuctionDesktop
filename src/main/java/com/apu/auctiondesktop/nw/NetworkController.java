@@ -54,7 +54,7 @@ public class NetworkController {
         AuctionQuery answer = decoder.decode(queryStr);      
         AuctionQuery query = getLastSendedQuery();
         GUIModel.getInstance()
-                .setAnswerTime(Time.getDelay(query.getTime(), answer.getTime()));
+                .setAnswerTime(Time.getDelay(query.getTime(), Time.getTime()));//answer.getTime()
         
         if(answer instanceof AnswerQuery) {
             if(query instanceof RegistrationQuery) {
