@@ -48,6 +48,10 @@ public class FXMLController implements Initializable {
     private TextField TextFieldLotId;    
     @FXML
     private TextField TextFieldAnswerTime;
+    @FXML
+    private TextField TextFieldServerIp;
+    @FXML
+    private TextField TextFieldServerPort;
 
     
     @Override
