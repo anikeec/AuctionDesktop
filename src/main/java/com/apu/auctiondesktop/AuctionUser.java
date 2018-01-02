@@ -15,18 +15,18 @@ import java.util.List;
  *
  * @author apu
  */
-public class User {
+public class AuctionUser {
     private final int userId;
     private Socket socket;
     private BufferedReader in;
     private BufferedWriter out;
     private final List<AuctionLot> observedLots = new ArrayList<>();
 
-    public User(int userId) {
+    public AuctionUser(int userId) {
         this(userId, null, null, null);
     }    
     
-    public User(int userId, Socket socket, BufferedReader in, BufferedWriter out) {
+    public AuctionUser(int userId, Socket socket, BufferedReader in, BufferedWriter out) {
         this.userId = userId;
         this.socket = socket;
         this.in = in;

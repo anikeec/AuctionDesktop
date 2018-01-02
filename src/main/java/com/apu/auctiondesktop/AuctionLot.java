@@ -17,8 +17,8 @@ public class AuctionLot {
     private int startPrice;
     private String lotName;
     private int lastRate;
-    private User lastRateUser;
-    private final List<User> orservers = new ArrayList<>();
+    private AuctionUser lastRateUser;
+    private final List<AuctionUser> orservers = new ArrayList<>();
 
     public AuctionLot(int lotId, int startPrice, String lotName) {
         this.lotId = lotId;
@@ -58,20 +58,20 @@ public class AuctionLot {
         this.lastRate = lastRate;
     }
 
-    public User getLastRateUser() {
+    public AuctionUser getLastRateUser() {
         return lastRateUser;
     }
 
-    public void setLastRateUser(User lastRateUser) {
+    public void setLastRateUser(AuctionUser lastRateUser) {
         this.lastRateUser = lastRateUser;
     }
     
-    public void addUserToObservers(User user) {
+    public void addUserToObservers(AuctionUser user) {
         if(!orservers.contains(user))
             orservers.add(user);
     }
     
-    public void removeUserFromObservers(User user) {
+    public void removeUserFromObservers(AuctionUser user) {
         if(orservers.contains(user))
             orservers.remove(user);
     }

@@ -6,16 +6,12 @@
 package com.apu.auctiondesktop.nw;
 
 import com.apu.auctionapi.AuctionQuery;
-import com.apu.auctiondesktop.nw.NetworkController;
 import com.apu.auctiondesktop.nw.entity.Message;
 import com.apu.auctiondesktop.utils.Log;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.util.concurrent.BlockingQueue;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 /**
@@ -89,7 +85,7 @@ public class ReceivingTask implements Runnable {
                 log.debug(classname, "Receiving thread. Message - Error");
                 messagesQueue.add(new Message("Error"));                
             } catch (Exception ex) { 
-            Logger.getLogger(ReceivingTask.class.getName()).log(Level.SEVERE, null, ex);
+                log.debug(classname,ExceptionUtils.getStackTrace(ex));
         } finally { }
     }
     
