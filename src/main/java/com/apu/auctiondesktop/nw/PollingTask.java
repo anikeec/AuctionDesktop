@@ -10,14 +10,14 @@ import com.apu.auctionapi.query.PollQuery;
 import com.apu.auctiondesktop.nw.entity.Message;
 import com.apu.auctiondesktop.nw.entity.User;
 import com.apu.auctiondesktop.utils.Log;
-import java.util.TimerTask;
 import java.util.concurrent.BlockingQueue;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 
 /**
  *
  * @author apu
  */
-public class PollingTask extends TimerTask {
+public class PollingTask implements Runnable {
     
     private static final Log log = Log.getInstance();
     private final Class classname = PollingTask.class;
@@ -36,16 +36,22 @@ public class PollingTask extends TimerTask {
     }
 
     @Override
-    public void run() {       
-        if(queriesQueue.remainingCapacity() > 3) { 
-            queriesQueue.add(new PollQuery(user.getUserId()));
-        } else {
-            log.debug(classname, "PollingTask Thread. Queue is full.");
-            log.debug(classname, "PollingTask Thread. Queue is full.");
-//            messagesQueue.add(new Message("Error"));
-        }
-            
-    }   
-    
+    public void run() { 
+        while(!Thread.currentThread().isInterrupted()) {
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException ex) {
+                log.debug(classname,ExceptionUtils.getStackTrace(ex));
+                break;
+            }
+            if(queriesQueue.remainingCapacity() > queriesQueue.size() - 1) { 
+                queriesQueue.add(new PollQuery(user.getUserId()));
+            } else {
+                log.debug(classname, "PollingTask Thread. Queue is full.");
+    //            messagesQueue.add(new Message("Error"));
+            }
+        } 
+        log.debug(classname, "Polling thread. Interrupted.");
+    }    
     
 }

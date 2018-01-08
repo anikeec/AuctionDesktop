@@ -41,7 +41,7 @@ public class Network implements Runnable {
     private BlockingQueue<AuctionQuery> sendedQueriesQueue; 
     private BlockingQueue<Message> messagesQueue;
     
-    private Timer timer;
+    private Thread pollingThread;
     private Thread sendingThread;
     private Thread receivingThread;
 
@@ -91,8 +91,8 @@ public class Network implements Runnable {
     }
     
     private void stopPolling() {
-        timer.cancel();            
-            log.debug(classname, "Network thread. Timer stopped");
+        pollingThread.interrupt();
+        log.debug(classname, "Network thread. Polling interrupted.");
     }
     
     private void stopNetwork() {        
@@ -144,9 +144,10 @@ public class Network implements Runnable {
         while(getClientState() == ClientState.NOT_CONNECTED) {};
 
         PollingTask pollingTask = new PollingTask(user, messagesQueue);
-        this.timer = new Timer(false);//run not as daemon
+        pollingThread = new Thread(pollingTask);
+        pollingThread.setDaemon(true);
         pollingTask.setQueriesQueue(queriesQueue);
-        timer.scheduleAtFixedRate(pollingTask, 1000, 200);
+        pollingThread.start();
         
         while(true) {
             try {
