@@ -22,6 +22,7 @@ public class GUIModel {
     private SimpleStringProperty currentWinner;
     private SimpleIntegerProperty amountObservers;
     private SimpleStringProperty answerTime;
+    private SimpleStringProperty timeToFinish;
     
     private static GUIModel instance;
     
@@ -163,6 +164,17 @@ public class GUIModel {
 
     public void setAnswerTime(String time) {
         this.answerTimeProperty().set(time);
-    }  
+    } 
+    
+    public SimpleStringProperty timeToFinishProperty() {
+        if(this.timeToFinish == null) { 
+            this.timeToFinish = new SimpleStringProperty(); 
+        }
+        return this.timeToFinish;
+    }
+
+    public void setTimeToFinish(String timeToFinish) {
+        this.timeToFinishProperty().set(timeToFinish);
+    }
     
 }

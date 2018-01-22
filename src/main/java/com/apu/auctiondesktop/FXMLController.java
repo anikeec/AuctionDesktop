@@ -52,6 +52,8 @@ public class FXMLController implements Initializable {
     private TextField TextFieldServerIp;
     @FXML
     private TextField TextFieldServerPort;
+    @FXML
+    private TextField TextFieldTimeToFinish;
 
     
     @Override
@@ -64,6 +66,7 @@ public class FXMLController implements Initializable {
         model.setCurrentWinner("-1");
         model.setAmountObservers(-1);
         model.setAnswerTime("");
+        model.setTimeToFinish("");
         
         model.lotIdProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -111,6 +114,12 @@ public class FXMLController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 TextFieldAnswerTime.setText(newValue);
+            }
+        });
+        model.timeToFinishProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                TextFieldTimeToFinish.setText(newValue);
             }
         });
     }    

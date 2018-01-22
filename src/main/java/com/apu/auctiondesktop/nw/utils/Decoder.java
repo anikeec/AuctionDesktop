@@ -78,6 +78,7 @@ public class Decoder {
         JsonArray array = rootObject.get("auctionLots").getAsJsonArray();
         JsonObject obj;
         Integer lotId, startPrice, lastRate,lastRateUserId, amountObservers;
+        long timeToFinish;
         String lotName;
         AuctionLotEntity lot;
         for(JsonElement element:array) {
@@ -88,12 +89,14 @@ public class Decoder {
             lastRate = obj.get("lastRate").getAsInt();
             lastRateUserId = obj.get("lastRateUserId").getAsInt();
             amountObservers = obj.get("amountObservers").getAsInt();
+            timeToFinish = obj.get("timeToFinish").getAsLong();
             lot = new AuctionLotEntity(lotId,
                                         startPrice,
                                         lotName,
                                         lastRate,
                                         lastRateUserId,
-                                        amountObservers);
+                                        amountObservers,
+                                        timeToFinish);
             result.addLotToCollection(lot);
         }
         log.debug(classname, "");

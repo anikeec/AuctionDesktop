@@ -26,6 +26,29 @@ public class Time {
         return dateFormat.format(new Date());
     }
     
+    public static String timeToDateString(long time) {
+        return dateFormat.format(new Date(time));
+    }
+	
+	public static String timeToFinishToString(long diff) {		
+		long ms = diff % 1000l;
+		diff = diff / 1000l;
+
+		long sec = diff % 60l;
+		diff = diff / 60l;
+
+		long min = diff % 60l;
+		diff = diff / 60l;
+
+		long hours = diff % 24l;
+		diff = diff / 24l;
+
+		long days = diff;
+
+		String out = String.format("%d days, %2d:%2d:%2d", days, hours, min, sec);
+        return out;
+    }
+    
     public static Date timeToDate(String time) {
         try {
             return dateFormat.parse(time);

@@ -10,10 +10,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apu.auctiondesktop.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apu.auctiondesktop.FXMLController">
     <children>
-        <Button fx:id="newRateButton" layoutX="197.0" layoutY="445.0" onMouseReleased="#handleNewRateButtonMouseReleased" text="Increase price!" />
-      <Button fx:id="connectButton" layoutX="117.0" layoutY="445.0" onMouseReleased="#handleConnectButtonMouseReleased" text="Connect" />
+        <Button fx:id="newRateButton" layoutX="197.0" layoutY="480.0" onMouseReleased="#handleNewRateButtonMouseReleased" text="Increase price!" />
+      <Button fx:id="connectButton" layoutX="117.0" layoutY="480.0" onMouseReleased="#handleConnectButtonMouseReleased" text="Connect" />
       <TextField fx:id="TextFieldState" disable="true" layoutX="140.0" layoutY="25.0" prefHeight="22.0" prefWidth="153.0" AnchorPane.topAnchor="26.0" />
       <Label layoutX="25.0" layoutY="30.0" text="State" />
       <TextField fx:id="TextFieldLotName" editable="false" layoutX="140.0" layoutY="95.0" prefHeight="22.0" prefWidth="153.0" />
@@ -37,12 +37,14 @@
       <Label layoutX="25.0" layoutY="308.0" text="User ID" />
       <TextField fx:id="TextFieldLotId" layoutX="140.0" layoutY="60.0" prefHeight="22.0" prefWidth="153.0" />
       <Label layoutX="25.0" layoutY="65.0" text="Lot ID" />
-      <Button fx:id="loadLotsButton" disable="true" layoutX="31.0" layoutY="445.0" onMouseReleased="#handleLoadLotsButtonMouseReleased" text="Load lots" />
+      <Button fx:id="loadLotsButton" disable="true" layoutX="31.0" layoutY="480.0" onMouseReleased="#handleLoadLotsButtonMouseReleased" text="Load lots" />
       <TextField fx:id="TextFieldAnswerTime" editable="false" layoutX="140.0" layoutY="340.0" prefHeight="22.0" prefWidth="153.0" />
       <Label layoutX="25.0" layoutY="344.0" text="Answer timeout" />
-      <Label layoutX="25.0" layoutY="378.0" text="Server IP" />
-      <TextField fx:id="TextFieldServerIp" disable="true" editable="false" layoutX="140.0" layoutY="375.0" prefHeight="22.0" prefWidth="100.0" text="127.0.0.1" />
-      <Label layoutX="25.0" layoutY="413.0" text="Server port" />
-      <TextField fx:id="TextFieldServerPort" disable="true" editable="false" layoutX="140.0" layoutY="410.0" prefHeight="22.0" prefWidth="50.0" text="5050" />
+      <Label layoutX="25.0" layoutY="412.0" text="Server IP" />
+      <TextField fx:id="TextFieldServerIp" disable="true" editable="false" layoutX="140.0" layoutY="410.0" prefHeight="22.0" prefWidth="100.0" text="127.0.0.1" />
+      <Label layoutX="25.0" layoutY="448.0" text="Server port" />
+      <TextField fx:id="TextFieldServerPort" disable="true" editable="false" layoutX="140.0" layoutY="445.0" prefHeight="22.0" prefWidth="50.0" text="5050" />
+      <Label layoutX="25.0" layoutY="379.0" text="Time to finish" />
+      <TextField fx:id="TextFieldTimeToFinish" editable="false" layoutX="140.0" layoutY="375.0" prefHeight="22.0" prefWidth="153.0" />
     </children>
 </AnchorPane>

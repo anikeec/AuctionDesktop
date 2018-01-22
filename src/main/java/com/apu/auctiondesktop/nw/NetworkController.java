@@ -120,6 +120,8 @@ public class NetworkController {
             model.setCurrentRate(lotEntity.getLastRate()); 
             model.setCurrentWinner("" + lotEntity.getLastRateUserId());
             model.setAmountObservers(lotEntity.getAmountObservers());
+            model.setTimeToFinish(Time
+                    .timeToFinishToString(lotEntity.getTimeToFinish()));
         } else {
             model.setLotId(0);            
             model.setLotName("");
