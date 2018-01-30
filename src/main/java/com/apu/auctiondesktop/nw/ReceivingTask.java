@@ -49,7 +49,7 @@ public class ReceivingTask implements Runnable {
                 byte[] bytes = new byte[1024];
                 while(!socket.isClosed()) {
                     try {
-                        Thread.sleep(1);
+                        Thread.sleep(5);
                     } catch(InterruptedException ex) {
                         log.debug(classname, "Thread sleep is interrupted.");
                         break;
@@ -76,7 +76,10 @@ public class ReceivingTask implements Runnable {
                         sb.delete(0, sb.capacity());
                         if(line != null) {
                             log.debug(classname, line);
-                            networkController.handle(line);
+                            String[] lines = line.split("\r\n");
+                            for(String l:lines) {
+                                networkController.handle(l);
+                            }
                         }
                     }                   
                 }
