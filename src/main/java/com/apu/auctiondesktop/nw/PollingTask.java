@@ -22,6 +22,7 @@ public class PollingTask implements Runnable {
     private static final Log log = Log.getInstance();
     private final Class classname = PollingTask.class;
     
+    private final long POLLING_TIMEOUT_MS = 5000;
     private final User user;
     private BlockingQueue<AuctionQuery> queriesQueue;
     private final BlockingQueue<Message> messagesQueue;
@@ -39,7 +40,7 @@ public class PollingTask implements Runnable {
     public void run() { 
         while(!Thread.currentThread().isInterrupted()) {
             try {
-                Thread.sleep(200);
+                Thread.sleep(POLLING_TIMEOUT_MS);
             } catch (InterruptedException ex) {
                 log.debug(classname,ExceptionUtils.getStackTrace(ex));
                 break;

@@ -15,6 +15,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.TimeUnit;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 /**
@@ -26,6 +27,7 @@ public class SendingTask implements Runnable {
     private static final Log log = Log.getInstance();
     private final Class classname = SendingTask.class;
     
+    private final long QUEUE_WAIT_TIMEOUT_MS = 100;
     private final BlockingQueue<AuctionQuery> queriesQueue;
     private final BlockingQueue<AuctionQuery> sendedQueriesQueue;
     private final BlockingQueue<Message> messagesQueue;
@@ -51,18 +53,19 @@ public class SendingTask implements Runnable {
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(os));
             String line;
             while(!socket.isClosed()) {
-                try {
-                    Thread.sleep(5);
-                } catch(InterruptedException ex) {
-                    log.debug(classname, "Thread sleep is interrupted.");
-                    break;
-                }
+//                try {
+//                    Thread.sleep(5);
+//                } catch(InterruptedException ex) {
+//                    log.debug(classname, "Thread sleep is interrupted.");
+//                    break;
+//                }                
+                query = queriesQueue.poll(QUEUE_WAIT_TIMEOUT_MS, 
+                                            TimeUnit.MILLISECONDS);
                 if(Thread.currentThread().isInterrupted()) {    
                     throw new InterruptedException();
                 }
-                query = queriesQueue.peek();
                 if(query == null)   continue;
-                queriesQueue.remove();
+//                queriesQueue.remove();
                 query.setPacketId(packetId++);
                 while(sendedQueriesQueue.peek() != null){
                     if(Thread.currentThread().isInterrupted())     
