@@ -54,7 +54,7 @@ public class Decoder {
     }
     
     private void decode(RegistrationQuery result) throws Exception {
-        log.debug(classname, "Registration packet");
+        throw new Exception("Method has not ready yet");
     }
     
     private void decode(PingQuery result)  throws Exception {
@@ -66,7 +66,24 @@ public class Decoder {
     }
     
     private void decode(NotifyQuery result)  throws Exception {
-        throw new Exception("Method has not ready yet");        
+        log.debug(classname, "NotifyQuery packet");
+        rootObject = rootObject.get("lot").getAsJsonObject();
+        Integer lotId = rootObject.get("lotId").getAsInt();
+        Integer startPrice = rootObject.get("startPrice").getAsInt();
+        String lotName = rootObject.get("lotName").getAsString();
+        Integer lastRate = rootObject.get("lastRate").getAsInt();
+        Integer lastRateUserId = rootObject.get("lastRateUserId").getAsInt();
+        Integer amountObservers = rootObject.get("amountObservers").getAsInt();
+        long timeToFinish = rootObject.get("timeToFinish").getAsLong();
+        AuctionLotEntity lot = new AuctionLotEntity(lotId,
+                                    startPrice,
+                                    lotName,
+                                    lastRate,
+                                    lastRateUserId,
+                                    amountObservers,
+                                    timeToFinish);
+        result.setLot(lot);
+               
     }
     
     private void decode(PollQuery result)  throws Exception {
@@ -121,6 +138,7 @@ public class Decoder {
             result = new NewRateQuery(packetId, userId, time);
             Decoder.this.decode((NewRateQuery)result);
         } else if(queryType.equals(QueryType.NOTIFY.toString())) {
+            result = new NotifyQuery(packetId, userId);
             Decoder.this.decode((NotifyQuery)result);
         } else if(queryType.equals(QueryType.PING.toString())) {
             result = new PingQuery(packetId, userId, time);

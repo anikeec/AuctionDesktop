@@ -11,6 +11,7 @@ import com.apu.auctionapi.AuctionQuery;
 import com.apu.auctionapi.query.DisconnectQuery;
 import com.apu.auctionapi.query.PingQuery;
 import com.apu.auctionapi.answer.PollAnswerQuery;
+import com.apu.auctionapi.query.NotifyQuery;
 import com.apu.auctionapi.query.RegistrationQuery;
 import com.apu.auctiondesktop.GUIModel;
 import com.apu.auctiondesktop.nw.client.Client;
@@ -24,6 +25,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
+import javafx.application.Platform;
 
 /**
  *
@@ -52,6 +54,10 @@ public class NetworkController {
     
     public void handle(String queryStr) throws IOException, Exception {
         AuctionQuery answer = decoder.decode(queryStr);      
+        if(answer instanceof NotifyQuery) {
+            handle((NotifyQuery)answer);
+            return;
+        }
         AuctionQuery query = getLastSendedQuery();
         GUIModel.getInstance()
                 .setAnswerTime(Time.getDelay(query.getTime(), Time.getTime()));//answer.getTime()
@@ -81,6 +87,7 @@ public class NetworkController {
             log.debug(classname, "" + truePacketsValue);
             removeLastSendedQuery();
         }
+        
     }
     
     private AuctionQuery getLastSendedQuery() {
@@ -94,6 +101,20 @@ public class NetworkController {
     public void handle(AnswerQuery query) {
         log.debug(classname, "Answer query to controller");
         
+    }
+    
+    public void handle(NotifyQuery query) {
+        log.debug(classname, "Notify query to controller");
+        GUIModel model = GUIModel.getInstance();
+        AuctionLotEntity lotEntity = query.getLot();
+        model.setLotId(lotEntity.getLotId());
+        model.setLotName(lotEntity.getLotName());
+        model.setStartPrice(lotEntity.getStartPrice());        
+        model.setCurrentRate(lotEntity.getLastRate()); 
+        model.setCurrentWinner("" + lotEntity.getLastRateUserId());
+        model.setAmountObservers(lotEntity.getAmountObservers());
+        model.setTimeToFinish(Time
+                .timeToFinishToString(lotEntity.getTimeToFinish()));
     }
     
     public void handle(DisconnectQuery query) {
@@ -111,6 +132,12 @@ public class NetworkController {
     }
     
     public void handle(PollAnswerQuery query) {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                
+            }
+        });
         GUIModel model = GUIModel.getInstance();
         if(query.getAuctionLots().size() > 0) {
             AuctionLotEntity lotEntity = query.getAuctionLots().get(0);
