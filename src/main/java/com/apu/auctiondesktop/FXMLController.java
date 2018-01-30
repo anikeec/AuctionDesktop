@@ -11,6 +11,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -54,20 +55,24 @@ public class FXMLController implements Initializable {
     private TextField TextFieldServerPort;
     @FXML
     private TextField TextFieldTimeToFinish;
+    
+    private void initModel() {
+        GUIModel model = GUIModel.getInstance();
+        model.setLotId(0);
+        model.setStartPrice(0);
+        model.setLotName("");
+        model.setCurrentRate(model.getStartPrice());        
+        model.setCurrentWinner("");
+        model.setAmountObservers(0);
+        model.setAnswerTime("");
+        model.setTimeToFinish("");
+    }
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        initModel();
         GUIModel model = GUIModel.getInstance();
-        model.setLotId(-1);
-        model.setStartPrice(-1);
-        model.setLotName("");
-        model.setCurrentRate(model.getStartPrice());        
-        model.setCurrentWinner("-1");
-        model.setAmountObservers(-1);
-        model.setAnswerTime("");
-        model.setTimeToFinish("");
-        
         model.lotIdProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
@@ -120,6 +125,12 @@ public class FXMLController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 TextFieldTimeToFinish.setText(newValue);
+                if(newValue.equals("0")) {
+                    LabelResult.setText("Auction finished.");
+                    newRateButton.setDisable(true);
+                } else {
+                    newRateButton.setDisable(false);
+                }
             }
         });
     }    
@@ -153,6 +164,7 @@ public class FXMLController implements Initializable {
                 try {
                     Integer userId = Integer.parseInt(userIdStr);
                     Integer lotId = Integer.parseInt(lotIdStr);
+                    initModel();
                     Client.getInstance().start(userId, lotId);
                     TextFieldState.setText("Connected");
                     LabelResult.setText("Server connected.");
@@ -160,6 +172,8 @@ public class FXMLController implements Initializable {
                     TextFieldUserId.setDisable(true);
                     TextFieldLotId.setDisable(true);
                     loadLotsButton.setDisable(true);
+                    newRateButton.setDisable(false);
+                    newRateButton.setText("Increase price!");
                 } catch (NumberFormatException ex) {
                     LabelResult.setText("Error user or lot ID.");
                 } catch (IOException ex) {

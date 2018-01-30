@@ -30,22 +30,25 @@ public class Time {
         return dateFormat.format(new Date(time));
     }
 	
-	public static String timeToFinishToString(long diff) {		
-		long ms = diff % 1000l;
-		diff = diff / 1000l;
+    public static String timeToFinishToString(long timeToFinish) {
 
-		long sec = diff % 60l;
-		diff = diff / 60l;
+        if(timeToFinish == 0)   return "0";
 
-		long min = diff % 60l;
-		diff = diff / 60l;
+        long ms = timeToFinish % 1000l;
+        timeToFinish = timeToFinish / 1000l;
 
-		long hours = diff % 24l;
-		diff = diff / 24l;
+        long sec = timeToFinish % 60l;
+        timeToFinish = timeToFinish / 60l;
 
-		long days = diff;
+        long min = timeToFinish % 60l;
+        timeToFinish = timeToFinish / 60l;
 
-		String out = String.format("%d days, %2d:%2d:%2d", days, hours, min, sec);
+        long hours = timeToFinish % 24l;
+        timeToFinish = timeToFinish / 24l;
+
+        long days = timeToFinish;
+
+        String out = String.format("%d days, %d:%d:%d", days, hours, min, sec);
         return out;
     }
     
