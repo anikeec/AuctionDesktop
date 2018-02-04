@@ -64,6 +64,7 @@ public class Client {
     }
     
     public void stop() throws IOException {
+        log.debug(classname, "Disconnect message.");
         messagesQueue.add(new Message("Disconnect"));
         while(networkThread.isAlive()){};
         clientSocket = null;

@@ -87,6 +87,7 @@ public class Network implements Runnable {
     }
 
     public void stop() {
+        log.debug(classname, "Error.");
         messagesQueue.add(new Message("Error"));
     }
     

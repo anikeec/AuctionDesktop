@@ -59,8 +59,13 @@ public class SendingTask implements Runnable {
 //                    log.debug(classname, "Thread sleep is interrupted.");
 //                    break;
 //                }                
+                try {
                 query = queriesQueue.poll(QUEUE_WAIT_TIMEOUT_MS, 
                                             TimeUnit.MILLISECONDS);
+                } catch(InterruptedException ex) {
+                    log.debug(classname,"Sending timeout interrupted.");
+                    throw new InterruptedException();
+                }
                 if(Thread.currentThread().isInterrupted()) {    
                     throw new InterruptedException();
                 }
@@ -84,7 +89,7 @@ public class SendingTask implements Runnable {
             log.debug(classname, "Sending thread. Message - Error.");
             messagesQueue.add(new Message("Error"));            
         } catch (InterruptedException ex) {
-            log.debug(classname,ExceptionUtils.getStackTrace(ex));
+//            log.debug(classname,ExceptionUtils.getStackTrace(ex));
             log.debug(classname, "Sending thread. Interrupted.");
         } finally { }
     }

@@ -42,7 +42,8 @@ public class PollingTask implements Runnable {
             try {
                 Thread.sleep(POLLING_TIMEOUT_MS);
             } catch (InterruptedException ex) {
-                log.debug(classname,ExceptionUtils.getStackTrace(ex));
+                log.debug(classname,"Timeout interrupted.");
+//                log.debug(classname,ExceptionUtils.getStackTrace(ex));
                 break;
             }
             if(queriesQueue.remainingCapacity() > queriesQueue.size() - 1) { 
