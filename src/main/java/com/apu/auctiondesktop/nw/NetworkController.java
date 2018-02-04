@@ -11,6 +11,7 @@ import com.apu.auctionapi.AuctionQuery;
 import com.apu.auctionapi.query.DisconnectQuery;
 import com.apu.auctionapi.query.PingQuery;
 import com.apu.auctionapi.answer.PollAnswerQuery;
+import com.apu.auctionapi.query.NewRateQuery;
 import com.apu.auctionapi.query.NotifyQuery;
 import com.apu.auctionapi.query.RegistrationQuery;
 import com.apu.auctiondesktop.GUIModel;
@@ -67,8 +68,11 @@ public class NetworkController {
                 handle((RegistrationQuery)query, (AnswerQuery)answer);
             } else if(query instanceof DisconnectQuery) {
                 handle((DisconnectQuery)query, (AnswerQuery)answer);
+            } else if(query instanceof NewRateQuery) {
+                handle((AnswerQuery)answer);
             } else {
                 handle((AnswerQuery)answer);
+                return;//wait for packet with information
             }
         } else if(answer instanceof DisconnectQuery) {
             handle((DisconnectQuery)answer);
@@ -132,12 +136,13 @@ public class NetworkController {
     }
     
     public void handle(PollAnswerQuery query) {
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                
-            }
-        });
+        log.debug(classname, "Poll answer query to controller");
+//        Platform.runLater(new Runnable() {
+//            @Override
+//            public void run() {
+//                
+//            }
+//        });
         GUIModel model = GUIModel.getInstance();
         if(query.getAuctionLots().size() > 0) {
             AuctionLotEntity lotEntity = query.getAuctionLots().get(0);

@@ -62,6 +62,8 @@ public class Time {
     }
     
     public static String getDelay(String timeAsk, String timeAnswer) {
+        if((timeAsk == null) || (timeAnswer == null)) 
+            return "Count error - Null.";
         try {
             long timeAskLong = dateFormat.parse(timeAsk).getTime();
             long timeAnswerLong = dateFormat.parse(timeAnswer).getTime();
