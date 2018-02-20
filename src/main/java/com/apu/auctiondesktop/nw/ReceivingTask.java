@@ -45,7 +45,7 @@ public class ReceivingTask implements Runnable {
                 String line;
                 String str;
                 int amount = 0;
-                StringBuilder sb = new StringBuilder();;
+                StringBuilder sb = new StringBuilder();
                 byte[] bytes = new byte[1024];
                 while(!socket.isClosed()) {
                     try {
@@ -60,7 +60,7 @@ public class ReceivingTask implements Runnable {
                     }
 //                    if(is.available() == 0) continue;
                     try {
-                        amount = is.read(bytes, 0, 1024);
+                        amount = is.read(bytes);//, 0, 1024
                     } catch (SocketTimeoutException ex) {
                         continue;
                     }
@@ -68,7 +68,7 @@ public class ReceivingTask implements Runnable {
                         log.debug(classname, "Receive end of socket.");
                         break;
                     }
-                    if(amount == 0) continue;
+                    if(amount == 0) continue;                    
                     str = new String(bytes, 0, amount);
                     sb.append(str);
                     if(sb.toString().contains("\r\n")) {

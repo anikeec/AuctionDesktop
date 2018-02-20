@@ -18,7 +18,6 @@ import com.apu.auctiondesktop.nw.entity.User;
 import com.apu.auctiondesktop.utils.Log;
 import java.io.IOException;
 import java.net.Socket;
-import java.util.Timer;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import org.apache.commons.lang3.exception.ExceptionUtils;
@@ -73,6 +72,7 @@ public class Network implements Runnable {
                                                         sendedQueriesQueue,
                                                         messagesQueue,
                                                         socket));
+        receivingThread.setDaemon(true);
         receivingThread.start();
     }
     
