@@ -42,11 +42,11 @@ public class GUIModel {
         return this.lastTimeUpdate;
     }
     
-    public final String getLastTimeUpdate() { 
+    public synchronized final String getLastTimeUpdate() { 
         return this.lastTimeUpdateProperty().get(); 
     }
 
-    public final void setLastTimeUpdate(String value) { 
+    public synchronized final void setLastTimeUpdate(String value) { 
         this.lastTimeUpdateProperty().set(value); 
     }
     
@@ -57,11 +57,11 @@ public class GUIModel {
         return this.state;
     }
     
-    public final String getState() { 
+    public synchronized final String getState() { 
         return this.stateProperty().get(); 
     }
 
-    public final void setState(String value) { 
+    public synchronized final void setState(String value) { 
         this.stateProperty().set(value); 
     }
     
@@ -79,19 +79,19 @@ public class GUIModel {
         return this.lotId;
     }
     
-    public final Integer getLotId() { 
+    public synchronized final Integer getLotId() { 
         return this.lotIdProperty().get(); 
     }
 
-    public final void setLotId(Integer value) { 
+    public synchronized final void setLotId(Integer value) { 
         this.lotIdProperty().set(value); 
     }
     
-    public final String getLotName() { 
+    public synchronized final String getLotName() { 
         return this.lotNameProperty().get(); 
     }
 
-    public final void setLotName(String value) { 
+    public synchronized final void setLotName(String value) { 
         this.lotNameProperty().set(value); 
     }
     
@@ -102,11 +102,11 @@ public class GUIModel {
         return this.startPrice;
     }
     
-    public final Integer getStartPrice() { 
+    public synchronized final Integer getStartPrice() { 
         return this.startPriceProperty().get(); 
     }
 
-    public final void setStartPrice(Integer value) { 
+    public synchronized final void setStartPrice(Integer value) { 
         this.startPriceProperty().set(value); 
     }
     
@@ -117,11 +117,11 @@ public class GUIModel {
         return this.currentRate;
     }
     
-    public final Integer getCurrentRate() { 
+    public synchronized final Integer getCurrentRate() { 
         return this.currentRateProperty().get(); 
     }
 
-    public final void setCurrentRate(Integer value) { 
+    public synchronized final void setCurrentRate(Integer value) { 
         this.currentRateProperty().set(value); 
     }
     
@@ -132,19 +132,19 @@ public class GUIModel {
         return this.currentWinner;
     }
     
-    public final String getCurrentWinner() { 
+    public synchronized final String getCurrentWinner() { 
         return this.currentWinnerProperty().get(); 
     }
 
-    public final void setCurrentWinner(String value) { 
+    public synchronized final void setCurrentWinner(String value) { 
         this.currentWinnerProperty().set(value); 
     }
     
-    public final Integer getAmountObservers() { 
+    public synchronized final Integer getAmountObservers() { 
         return this.amountObserversProperty().get(); 
     }
 
-    public final void setAmountObservers(Integer value) { 
+    public synchronized final void setAmountObservers(Integer value) { 
         this.amountObserversProperty().set(value); 
     }
     
@@ -162,7 +162,7 @@ public class GUIModel {
         return this.answerTime;
     }
 
-    public void setAnswerTime(String time) {
+    public synchronized void setAnswerTime(String time) {
         this.answerTimeProperty().set(time);
     } 
     
@@ -173,7 +173,7 @@ public class GUIModel {
         return this.timeToFinish;
     }
 
-    public void setTimeToFinish(String timeToFinish) {
+    public synchronized void setTimeToFinish(String timeToFinish) {
         this.timeToFinishProperty().set(timeToFinish);
     }
     
