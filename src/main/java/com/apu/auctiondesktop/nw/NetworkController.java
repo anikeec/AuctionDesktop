@@ -17,16 +17,12 @@ import com.apu.auctionapi.query.RegistrationQuery;
 import com.apu.auctiondesktop.GUIModel;
 import com.apu.auctiondesktop.nw.client.Client;
 import com.apu.auctiondesktop.nw.client.ClientState;
-import com.apu.auctiondesktop.nw.entity.Message;
 import com.apu.auctiondesktop.nw.entity.User;
 import com.apu.auctiondesktop.nw.utils.Decoder;
 import com.apu.auctiondesktop.utils.Log;
 import com.apu.auctiondesktop.utils.Time;
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
 import java.util.concurrent.BlockingQueue;
-import javafx.application.Platform;
 
 /**
  *

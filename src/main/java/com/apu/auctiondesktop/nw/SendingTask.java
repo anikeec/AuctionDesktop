@@ -80,7 +80,7 @@ public class SendingTask implements Runnable {
                 line = Coder.getInstance().code(query);
                 log.debug(classname, "send:" + line);
                 out.write(line);
-                out.flush();                   
+                out.flush();
             }
             log.debug(classname, "Sending thread. Message - Socket closed");
             messagesQueue.add(new Message("Socket closed"));            
